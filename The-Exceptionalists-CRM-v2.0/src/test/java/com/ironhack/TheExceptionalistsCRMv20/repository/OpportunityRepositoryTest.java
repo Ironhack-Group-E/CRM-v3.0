@@ -172,7 +172,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCountr_containsOpportunities_listOfProductAndCounty() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCountry();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCountry();
         assertEquals(1, result.size());
         assertEquals("Spain", result.get(0)[0]);
         assertEquals(4L, result.get(0)[1]);
@@ -180,7 +180,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCountryWhereClosedWon_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCountryWhereClosedWon();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCountryWhereClosedWon();
         assertEquals(1, result.size());
         assertEquals("Spain", result.get(0)[0]);
         assertEquals(2L, result.get(0)[1]);
@@ -188,7 +188,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCountryWhereClosedLost_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCountryWhereClosedLost();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCountryWhereClosedLost();
         assertEquals(1, result.size());
         assertEquals("Spain", result.get(0)[0]);
         assertEquals(1L, result.get(0)[1]);
@@ -197,7 +197,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCountryWhereOpen_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCountryWhereOpen();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCountryWhereOpen();
         assertEquals(1, result.size());
         assertEquals("Spain", result.get(0)[0]);
         assertEquals(1L, result.get(0)[1]);
@@ -205,7 +205,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCity_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCity();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCity();
         assertEquals(1, result.size());
         assertEquals("Madrid", result.get(0)[0]);
         assertEquals(4L, result.get(0)[1]);
@@ -213,7 +213,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCityWhereClosedWon_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCityWhereClosedWon();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCityWhereClosedWon();
         assertEquals(1, result.size());
         assertEquals("Madrid", result.get(0)[0]);
         assertEquals(2L, result.get(0)[1]);
@@ -221,7 +221,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCityWhereClosedLost_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCityWhereClosedLost();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCityWhereClosedLost();
         assertEquals(1, result.size());
         assertEquals("Madrid", result.get(0)[0]);
         assertEquals(1L, result.get(0)[1]);
@@ -229,7 +229,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByCityWhereOpen_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByCityWhereOpen();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByCityWhereOpen();
         assertEquals(1, result.size());
         assertEquals("Madrid", result.get(0)[0]);
         assertEquals(1L, result.get(0)[1]);
@@ -237,7 +237,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByIndustry_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByIndustry();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByIndustry();
         assertEquals(1, result.size());
         assertEquals(Industry.ECOMMERCE, result.get(0)[0]);
         assertEquals(4L, result.get(0)[1]);
@@ -245,7 +245,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByIndustryWhereClosedWon_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByIndustryWhereClosedWon();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon();
         assertEquals(1, result.size());
         assertEquals(Industry.ECOMMERCE, result.get(0)[0]);
         assertEquals(2L, result.get(0)[1]);
@@ -253,7 +253,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByIndustryWhereClosedLost_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByIndustryWhereClosedLost();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedLost();
         assertEquals(1, result.size());
         assertEquals(Industry.ECOMMERCE, result.get(0)[0]);
         assertEquals(1L, result.get(0)[1]);
@@ -261,7 +261,7 @@ class OpportunityRepositoryTest {
 
     @Test
     void countOfOpportuntiesByIndustryWhereOpen_containsOpportunities_listOfProductAndCount() {
-        List<Object[]> result = opportunityRepository.countOfOpportuntiesByIndustryWhereOpen();
+        List<Object[]> result = opportunityRepository.countOfOpportunitiesByIndustryWhereOpen();
         assertEquals(1, result.size());
         assertEquals(Industry.ECOMMERCE, result.get(0)[0]);
         assertEquals(1L, result.get(0)[1]);
