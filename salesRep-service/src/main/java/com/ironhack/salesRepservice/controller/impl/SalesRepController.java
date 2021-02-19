@@ -29,7 +29,7 @@ public class SalesRepController implements ISalesRepController {
 
     @PostMapping("/sales-rep")
     @ResponseStatus(HttpStatus.CREATED)
-    public SalesRepDTO postSalesRep() {
-        return salesRepService.postSalesRep();
+    public SalesRepDTO postSalesRep(@RequestBody SalesRepDTO salesRepDTO) {
+        return salesRepService.postSalesRep(salesRepDTO);
     }
 }

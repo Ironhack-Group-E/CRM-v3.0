@@ -9,5 +9,5 @@ public interface ISalesRepService {
 
     List<SalesRepDTO> getAllSalesRep();
 
-    SalesRepDTO postSalesRep();
+    SalesRepDTO postSalesRep(SalesRepDTO salesRepDTO);
 }

@@ -43,7 +43,12 @@ public class SalesRepService implements ISalesRepService {
         return salesRepDTOS;
     }
 
-    public SalesRepDTO postSalesRep() {
-        return null;
+    public SalesRepDTO postSalesRep(SalesRepDTO salesRepDTO) {
+
+        SalesRep salesRep = new SalesRep(salesRepDTO.getName());
+
+        salesRepRepository.save(salesRep);
+
+        return salesRepDTO;
     }
 }
