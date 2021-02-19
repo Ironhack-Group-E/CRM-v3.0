@@ -2,13 +2,20 @@ package com.ironhack.accountservice.controller.dtos;
 
 import com.ironhack.accountservice.enums.Industry;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
 public class AccountDTO {
 
     private Integer id;
+    @NotEmpty
     private String companyName;
     private Industry industry;
+    @Min(0)
     private int employeeCount;
+    @NotEmpty
     private String city;
+    @NotEmpty
     private String country;
 
     public AccountDTO() {

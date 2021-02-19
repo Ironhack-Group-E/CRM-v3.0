@@ -2,13 +2,23 @@ package com.ironhack.accountservice.controller.dtos;
 
 import com.ironhack.accountservice.model.Account;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 public class ContactDTO {
 
     private Integer id;
+    @NotEmpty
     private String name;
+    @NotEmpty
+    @Email
     private String email;
+    @NotEmpty
     private String companyName;
+    @NotEmpty
     private String phoneNumber;
+    @NotNull
     private Account account;
 
     public ContactDTO() {

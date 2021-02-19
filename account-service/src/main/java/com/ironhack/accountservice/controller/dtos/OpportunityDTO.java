@@ -5,14 +5,21 @@ import com.ironhack.accountservice.enums.Status;
 import com.ironhack.accountservice.model.Account;
 import com.ironhack.accountservice.model.Contact;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
 public class OpportunityDTO {
 
     private Integer id;
     private Product product;
+    @Min(0)
     private int quantity;
+    @NotNull
     private Contact decisionMaker;
     private Status status;
+    @Min(1)
     private Integer salesRepId;
+    @NotNull
     private Account account;
 
     public OpportunityDTO() {

@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 public class AccountController implements IAccountController {
 
@@ -21,7 +23,7 @@ public class AccountController implements IAccountController {
 
     @PostMapping("/account")
     @ResponseStatus(HttpStatus.CREATED)
-    public AccountDTO postAccount(@RequestBody AccountDTO accountDTO) {
+    public AccountDTO postAccount(@RequestBody @Valid AccountDTO accountDTO) {
         return accountService.postAccount(accountDTO);
     }
 }

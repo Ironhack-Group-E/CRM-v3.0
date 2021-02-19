@@ -5,7 +5,9 @@ import com.ironhack.accountservice.model.Account;
 import com.ironhack.accountservice.repository.AccountRepository;
 import com.ironhack.accountservice.service.interfaces.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class AccountService implements IAccountService {
@@ -19,12 +21,20 @@ public class AccountService implements IAccountService {
 
             Account account = accountRepository.findById(id).get();
 
-            return new AccountDTO(account.getId(), account.getCompanyName());
+            return new AccountDTO(account.getId(), account.getCompanyName(), account.getIndustry(),
+                    account.getEmployeeCount(), account.getCity(), account.getCountry());
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Account not found");
         }
-        return null;
     }
 
     public AccountDTO postAccount(AccountDTO accountDTO) {
-        return null;
+
+        Account account = new Account(accountDTO.getCompanyName(), accountDTO.getIndustry(),
+                accountDTO.getEmployeeCount(), accountDTO.getCity(), accountDTO.getCountry());
+
+        accountRepository.save(account);
+
+        return accountDTO;
     }
 }
