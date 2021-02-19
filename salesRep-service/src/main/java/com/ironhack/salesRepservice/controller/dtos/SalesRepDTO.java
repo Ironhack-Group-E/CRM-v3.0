@@ -15,6 +15,11 @@ public class SalesRepDTO {
     public SalesRepDTO() {
     }
 
+    public SalesRepDTO(Integer id, @NotEmpty String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public SalesRepDTO(String name) {
         this.name = name;
     }
