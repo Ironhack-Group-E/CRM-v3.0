@@ -756,16 +756,16 @@ public class CommandManager {
                 Buffer.setReportColOne("Country");
                 switch (stat) {
                     case "opportunity" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCountry();
+                        result = opportunityRepository.countOfOpportunitiesByCountry();
                     }
                     case "closed-won" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCountryWhereClosedWon();
+                        result = opportunityRepository.countOfOpportunitiesByCountryWhereClosedWon();
                     }
                     case "closed-lost" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCountryWhereClosedLost();
+                        result = opportunityRepository.countOfOpportunitiesByCountryWhereClosedLost();
                     }
                     case "open" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCountryWhereOpen();
+                        result = opportunityRepository.countOfOpportunitiesByCountryWhereOpen();
                     }
                 }
             }
@@ -773,16 +773,16 @@ public class CommandManager {
                 Buffer.setReportColOne("City");
                 switch (stat) {
                     case "opportunity" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCity();
+                        result = opportunityRepository.countOfOpportunitiesByCity();
                     }
                     case "closed-won" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCityWhereClosedWon();
+                        result = opportunityRepository.countOfOpportunitiesByCityWhereClosedWon();
                     }
                     case "closed-lost" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCityWhereClosedLost();
+                        result = opportunityRepository.countOfOpportunitiesByCityWhereClosedLost();
                     }
                     case "open" -> {
-                        result = opportunityRepository.countOfOpportuntiesByCityWhereOpen();
+                        result = opportunityRepository.countOfOpportunitiesByCityWhereOpen();
                     }
                 }
             }
@@ -790,16 +790,16 @@ public class CommandManager {
                 Buffer.setReportColOne("Industry");
                 switch (stat) {
                     case "opportunity" -> {
-                        result = opportunityRepository.countOfOpportuntiesByIndustry();
+                        result = opportunityRepository.countOfOpportunitiesByIndustry();
                     }
                     case "closed-won" -> {
-                        result = opportunityRepository.countOfOpportuntiesByIndustryWhereClosedWon();
+                        result = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon();
                     }
                     case "closed-lost" -> {
-                        result = opportunityRepository.countOfOpportuntiesByIndustryWhereClosedLost();
+                        result = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedLost();
                     }
                     case "open" -> {
-                        result = opportunityRepository.countOfOpportuntiesByIndustryWhereOpen();
+                        result = opportunityRepository.countOfOpportunitiesByIndustryWhereOpen();
                     }
                 }
             }
@@ -922,18 +922,18 @@ public class CommandManager {
         hashMap.put("Count of Opportunities by Product Where Closed Won", opportunityRepository.countOfOpportunitiesByProductWhereClosedWon());
         hashMap.put("Count of Opportunities by Product Where Closed Lost", opportunityRepository.countOfOpportunitiesByProductWhereClosedLost());
         hashMap.put("Count of Opportunities by Product Where Open", opportunityRepository.countOfOpportunitiesByProductWhereOpen());
-        hashMap.put("Count of Opportunities by Country", opportunityRepository.countOfOpportuntiesByCountry());
-        hashMap.put("Count of Opportunities by Country Where Closed Won", opportunityRepository.countOfOpportuntiesByCountryWhereClosedWon());
-        hashMap.put("Count of Opportunities by Country Where Closed Lost", opportunityRepository.countOfOpportuntiesByCountryWhereClosedLost());
-        hashMap.put("Count of Opportunities by Country Where Open", opportunityRepository.countOfOpportuntiesByCountryWhereOpen());
-        hashMap.put("Count of Opportunities by City", opportunityRepository.countOfOpportuntiesByCity());
-        hashMap.put("Count of Opportunities by City Where Closed Won", opportunityRepository.countOfOpportuntiesByCityWhereClosedWon());
-        hashMap.put("Count of Opportunities by City Where Closed Lost", opportunityRepository.countOfOpportuntiesByCityWhereClosedLost());
-        hashMap.put("Count of Opportunities by City Where Open", opportunityRepository.countOfOpportuntiesByCityWhereOpen());
-        hashMap.put("Count of Opportunities by Industry", opportunityRepository.countOfOpportuntiesByIndustry());
-        hashMap.put("Count of Opportunities by Industry Where Closed Won", opportunityRepository.countOfOpportuntiesByIndustryWhereClosedWon());
-        hashMap.put("Count of Opportunities by Industry Where Closed Lost", opportunityRepository.countOfOpportuntiesByIndustryWhereClosedLost());
-        hashMap.put("Count of Opportunities by Industry Where Open", opportunityRepository.countOfOpportuntiesByIndustryWhereOpen());
+        hashMap.put("Count of Opportunities by Country", opportunityRepository.countOfOpportunitiesByCountry());
+        hashMap.put("Count of Opportunities by Country Where Closed Won", opportunityRepository.countOfOpportunitiesByCountryWhereClosedWon());
+        hashMap.put("Count of Opportunities by Country Where Closed Lost", opportunityRepository.countOfOpportunitiesByCountryWhereClosedLost());
+        hashMap.put("Count of Opportunities by Country Where Open", opportunityRepository.countOfOpportunitiesByCountryWhereOpen());
+        hashMap.put("Count of Opportunities by City", opportunityRepository.countOfOpportunitiesByCity());
+        hashMap.put("Count of Opportunities by City Where Closed Won", opportunityRepository.countOfOpportunitiesByCityWhereClosedWon());
+        hashMap.put("Count of Opportunities by City Where Closed Lost", opportunityRepository.countOfOpportunitiesByCityWhereClosedLost());
+        hashMap.put("Count of Opportunities by City Where Open", opportunityRepository.countOfOpportunitiesByCityWhereOpen());
+        hashMap.put("Count of Opportunities by Industry", opportunityRepository.countOfOpportunitiesByIndustry());
+        hashMap.put("Count of Opportunities by Industry Where Closed Won", opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon());
+        hashMap.put("Count of Opportunities by Industry Where Closed Lost", opportunityRepository.countOfOpportunitiesByIndustryWhereClosedLost());
+        hashMap.put("Count of Opportunities by Industry Where Open", opportunityRepository.countOfOpportunitiesByIndustryWhereOpen());
 
 
         stats.put("Mean of Quantity", opportunityRepository.meanOfQuantity());
