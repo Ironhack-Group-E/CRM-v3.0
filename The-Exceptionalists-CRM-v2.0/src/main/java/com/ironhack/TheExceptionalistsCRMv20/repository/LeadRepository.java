@@ -17,6 +17,14 @@ public interface LeadRepository extends JpaRepository<Lead, Integer> {
     List<Object[]> countOfLeadsBySalesReps();
 
 
+    /**
+    *
+    *   ESTAS QUERIES NO HACEN FALTA INTEGRARLAS, SOLO LA PRIMERA
+    *
+     **/
+
+
+
     //Returns a list of products and count of all Leads by Product
     @Query(value = "sELECT o.product, COUNT(*) FROM leads l JOIN sales_rep s ON l.sales_rep_id = s.id JOIN opportunities o ON s.id = o.sales_rep_id GROUP BY o.product;", nativeQuery = true)
     List<Object[]> countOfLeadsByProduct();
