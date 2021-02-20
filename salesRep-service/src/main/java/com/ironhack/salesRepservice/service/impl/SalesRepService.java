@@ -47,7 +47,9 @@ public class SalesRepService implements ISalesRepService {
 
         SalesRep salesRep = new SalesRep(salesRepDTO.getName());
 
-        salesRepRepository.save(salesRep);
+        salesRep = salesRepRepository.save(salesRep);
+
+        salesRepDTO.setId(salesRep.getId());
 
         return salesRepDTO;
     }
