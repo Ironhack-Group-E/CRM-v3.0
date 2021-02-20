@@ -8,6 +8,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.*;
+import java.util.List;
 
 @RestController
 public class ContactController implements IContactController {
@@ -19,6 +20,12 @@ public class ContactController implements IContactController {
     @ResponseStatus(HttpStatus.OK)
     public ContactDTO getContact(@PathVariable Integer id) {
         return contactService.getContact(id);
+    }
+
+    @GetMapping("/contact")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ContactDTO> getAllContact() {
+        return contactService.getAllContact();
     }
 
 }

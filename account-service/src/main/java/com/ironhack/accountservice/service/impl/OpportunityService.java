@@ -52,6 +52,28 @@ public class OpportunityService implements IOpportunityService {
     }
 
     @Override
+    public List<OpportunityDTO> getAllOpportunity() {
+        List<Opportunity> opportunityList = opportunityRepository.findAll();
+
+        if (opportunityList.size() == 0){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no opportunities created");
+        }
+
+        List<OpportunityDTO> opportunityDTOList = new ArrayList<>();
+
+        for(Opportunity eachOpportunity:opportunityList){
+            opportunityDTOList.add(new OpportunityDTO(eachOpportunity.getId(),
+                    eachOpportunity.getProduct(),
+                    eachOpportunity.getQuantity(),
+                    contactService.getContact(eachOpportunity.getDecisionMaker().getId()),
+                    eachOpportunity.getStatus(),
+                    eachOpportunity.getSalesRep(),
+                    accountService.getAccount(eachOpportunity.getAccount().getId())));
+        }
+        return opportunityDTOList;
+    }
+
+    @Override
     public OpportunityDTO postOpportunity(Integer leadId, Integer accountId, PurchaseDTO purchaseDTO) {
 
         LeadDTO leadDTO = leadClient.getById(leadId);

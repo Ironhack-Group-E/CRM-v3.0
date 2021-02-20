@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class AccountService implements IAccountService {
 
@@ -37,5 +40,26 @@ public class AccountService implements IAccountService {
 
         accountDTO.setId(account.getId());
         return accountDTO;
+    }
+
+    public List<AccountDTO> getAllAccount() {
+
+        List<Account> accountList = accountRepository.findAll();
+
+        if (accountList.size() == 0){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        }
+
+        List<AccountDTO> accountDTOList = new ArrayList<>();
+
+        for(Account eachAccount: accountList){
+            accountDTOList.add( new AccountDTO(eachAccount.getId(),
+                    eachAccount.getCompanyName(),
+                    eachAccount.getIndustry(),
+                    eachAccount.getEmployeeCount(),
+                    eachAccount.getCity(),
+                    eachAccount.getCountry()));
+        }
+        return accountDTOList;
     }
 }

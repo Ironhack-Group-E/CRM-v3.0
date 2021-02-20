@@ -9,6 +9,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.*;
+import java.util.List;
 
 @RestController
 public class OpportunityController implements IOpportunityController {
@@ -20,6 +21,12 @@ public class OpportunityController implements IOpportunityController {
     @ResponseStatus(HttpStatus.OK)
     public OpportunityDTO getOpportunity(@PathVariable Integer id) {
         return opportunityService.getOpportunity(id);
+    }
+
+    @GetMapping("/opportunity")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityDTO> getAllOpportunity() {
+        return opportunityService.getAllOpportunity();
     }
 
     @PostMapping("/opportunity/{leadId}/{accountId}")

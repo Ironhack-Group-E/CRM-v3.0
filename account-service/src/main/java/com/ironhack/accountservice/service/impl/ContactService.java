@@ -10,6 +10,9 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class ContactService implements IContactService {
 
@@ -53,5 +56,25 @@ public class ContactService implements IContactService {
                 contact.getCompanyName(), contact.getPhoneNumber(), accountDTO);
 
         return contactDTO;
+    }
+
+    public List<ContactDTO> getAllContact() {
+        List<Contact> contactList = contactRepository.findAll();
+
+        if (contactList.size() == 0){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no contacts created");
+        }
+
+        List<ContactDTO> contactDTOList = new ArrayList<>();
+
+        for(Contact eachContact: contactList){
+            contactDTOList.add(new ContactDTO(eachContact.getId(),
+                    eachContact.getName(),
+                    eachContact.getEmail(),
+                    eachContact.getCompanyName(),
+                    eachContact.getPhoneNumber(),
+                    accountService.getAccount(eachContact.getAccount().getId())));
+        }
+        return contactDTOList;
     }
 }

@@ -5,10 +5,10 @@ import com.ironhack.manageAllservice.controller.dtos.ContactDTO;
 import com.ironhack.manageAllservice.controller.dtos.OpportunityDTO;
 import com.ironhack.manageAllservice.controller.dtos.PurchaseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @FeignClient("account-service")
 public interface AccountClient {
@@ -16,14 +16,23 @@ public interface AccountClient {
     @GetMapping("/account/{id}")
     AccountDTO getAccount(@PathVariable Integer id);
 
+    @GetMapping("/account")
+    List<AccountDTO> getAllAccount();
+
     @PostMapping("/account")
     AccountDTO postAccount(@RequestBody AccountDTO accountDTO);
 
     @GetMapping("/contact/{id}")
     ContactDTO getContact(@PathVariable Integer id);
 
+    @GetMapping("/contact")
+    List<ContactDTO> getAllContact();
+
     @GetMapping("/opportunity/{id}")
     OpportunityDTO getOpportunity(@PathVariable Integer id);
+
+    @GetMapping("/opportunity")
+    List<OpportunityDTO> getAllOpportunity();
 
     @PostMapping("/opportunity/{leadId}/{accountId}")
     OpportunityDTO postOpportunity(@PathVariable ("leadId") Integer leadId,

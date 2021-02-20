@@ -8,12 +8,19 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class AccountController implements IAccountController {
 
     @Autowired
     private AccountService accountService;
+
+    @GetMapping("/account")
+    @ResponseStatus(HttpStatus.OK)
+    public List<AccountDTO> getAllAccount() {
+        return accountService.getAllAccount();
+    }
 
     @GetMapping("/account/{id}")
     @ResponseStatus(HttpStatus.OK)

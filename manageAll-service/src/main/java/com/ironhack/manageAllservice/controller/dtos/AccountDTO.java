@@ -6,6 +6,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 
 public class AccountDTO {
+
     private Integer id;
     @NotEmpty
     private String companyName;
