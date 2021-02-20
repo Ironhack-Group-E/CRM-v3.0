@@ -30,7 +30,9 @@ public class ManageAllService implements IManageAllService {
 
         salesRepDTO.setId(null);
 
-        return circuitBreaker.run(() -> salesRepClient.postSalesRep(salesRepDTO), throwable -> postSalesRepFallBack());
+        SalesRepDTO salesRepDTO2 = circuitBreaker.run(() -> salesRepClient.postSalesRep(salesRepDTO), throwable -> postSalesRepFallBack());
+
+        return salesRepDTO2;
     }
 
     private SalesRepDTO postSalesRepFallBack() {
@@ -46,21 +48,17 @@ public class ManageAllService implements IManageAllService {
 
         Integer salesRepId = leadDTO.getSalesRepId();
 
-        //Check if the salesRep-service is up
+        //Check if the salesRep-service is up and the salesRep exists
         circuitBreaker1.run(() -> salesRepClient.getSalesRep(salesRepId), throwable -> getSalesRepFallBack());
 
-        //Check if the salesRepId exists
-        try {
-            salesRepClient.getSalesRep(leadDTO.getSalesRepId());
-        } catch (ResponseStatusException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "SaleRep not found");
-        }
+        //Check if the lead-service is up and, if it's, save the lead
+        LeadDTO leadDTO2 = circuitBreaker2.run(() -> leadClient.add(leadDTO), throwable -> addLeadFallBack());
 
-        return circuitBreaker2.run(() -> leadClient.add(leadDTO), throwable -> addLeadFallBack());
+        return leadDTO2;
     }
 
     private SalesRepDTO getSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SaleRep service not available");
+        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SalesRep service not available or salesRep not found");
     }
 
     private LeadDTO addLeadFallBack() {
