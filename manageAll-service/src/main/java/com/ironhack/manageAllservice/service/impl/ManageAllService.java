@@ -43,10 +43,6 @@ public class ManageAllService implements IManageAllService {
         return salesRepDTO2;
     }
 
-    /*private SalesRepDTO postSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SaleRep service not available");
-    }*/
-
     public List<SalesRepDTO> showSalesRep() {
 
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("salesRep-service");
@@ -183,11 +179,11 @@ public class ManageAllService implements IManageAllService {
     }
 
     private List<SalesRepDTO> getAllSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SaleRep service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SaleRep service not available");
     }
 
     private SalesRepDTO postSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SaleRep service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SaleRep service not available");
     }
 
     private LeadDTO addLeadFallBack() {
@@ -199,34 +195,34 @@ public class ManageAllService implements IManageAllService {
     }
 
     private List<LeadDTO> getAllLeadsFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Lead service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Lead service not available");
     }
 
     private List<OpportunityDTO> getAllOpportunityFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Account service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
     }
 
     private OpportunityDTO getOpportunityFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Account service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
     }
 
     private List<AccountDTO> getAllAccountsFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Account service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 
     private AccountDTO getAccountFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Account service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 
     private List<ContactDTO> getAllContactFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Account service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
     }
 
     private ContactDTO getContactFallback() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Account service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
     }
 
