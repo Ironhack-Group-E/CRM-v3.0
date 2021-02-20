@@ -104,12 +104,7 @@ public class ManageAllController implements IManageAllController {
         return manageAllService.lookUpContact(id);
     }
 
-
-
-
-
-
-    @PutMapping("/close-opportunity/{id}")
+    @PostMapping("/close-opportunity/{id}")
     public OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status) {
         return manageAllService.closeOpportunity(id, status);
     }
