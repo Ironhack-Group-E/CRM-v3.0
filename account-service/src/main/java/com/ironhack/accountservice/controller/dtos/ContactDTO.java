@@ -24,7 +24,7 @@ public class ContactDTO {
     public ContactDTO() {
     }
 
-    public ContactDTO(Integer id, String name, String email, String companyName, String phoneNumber, Account account) {
+    public ContactDTO(Integer id, String name, String email, String companyName, String phoneNumber, @NotNull Account account) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -33,7 +33,7 @@ public class ContactDTO {
         this.account = account;
     }
 
-    public ContactDTO(String name, String email, String companyName, String phoneNumber, Account account) {
+    public ContactDTO(String name, String email, String companyName, String phoneNumber, @NotNull Account account) {
         this.name = name;
         this.email = email;
         this.companyName = companyName;
@@ -81,7 +81,7 @@ public class ContactDTO {
         this.phoneNumber = phoneNumber;
     }
 
-    public Account getAccount() {
+    public @NotNull Account getAccount() {
         return account;
     }
 
