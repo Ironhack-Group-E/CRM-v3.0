@@ -14,13 +14,16 @@ import org.springframework.web.server.*;
 public class ContactService implements IContactService {
 
     @Autowired
-    ContactRepository contactRepository;
+    private ContactRepository contactRepository;
 
     @Autowired
-    IAccountService accountService;
+    private IAccountService accountService;
 
     @Autowired
-    LeadClient leadClient;
+    private LeadClient leadClient;
+
+    @Autowired
+    private AccountRepository accountRepository;
 
     @Override
     public ContactDTO getContact(Integer id) {
@@ -28,21 +31,27 @@ public class ContactService implements IContactService {
 
             Contact contact = contactRepository.findById(id).get();
 
+            AccountDTO accountDTO = accountService.getAccount(contact.getAccount().getId());
+
             return new ContactDTO(contact.getId(), contact.getName(), contact.getEmail(),
-                    contact.getCompanyName(), contact.getPhoneNumber(), contact.getAccount());
+                    contact.getCompanyName(), contact.getPhoneNumber(), accountDTO);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Contact not found");
         }
     }
 
     @Override
-    public Contact postContact(LeadDTO leadDTO, Account account) {
-        Contact contact=new Contact(leadDTO.getName(), leadDTO.getEmail()
-                ,leadDTO.getCompanyName(), leadDTO.getPhoneNumber(), account);
+    public ContactDTO postContact(LeadDTO leadDTO, AccountDTO accountDTO) {
+        Account account = accountRepository.findById(accountDTO.getId()).get();
 
-        contact=contactRepository.save(contact);
-//        ContactDTO contactDTO=new ContactDTO(contact.getId(), contact.getName(), contact.getEmail(),
-//                contact.getCompanyName(), contact.getPhoneNumber(), account);
-        return contact;
+        Contact contact = new Contact(leadDTO.getName(), leadDTO.getEmail(),
+                leadDTO.getCompanyName(), leadDTO.getPhoneNumber(), account);
+
+        contact = contactRepository.save(contact);
+
+        ContactDTO contactDTO=new ContactDTO(contact.getId(), contact.getName(), contact.getEmail(),
+                contact.getCompanyName(), contact.getPhoneNumber(), accountDTO);
+
+        return contactDTO;
     }
 }

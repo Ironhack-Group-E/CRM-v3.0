@@ -1,5 +1,7 @@
 package com.ironhack.accountservice.model;
 
+import com.ironhack.accountservice.controller.dtos.AccountDTO;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +15,7 @@ public class Contact {
     private String companyName;
     private String phoneNumber;
     @ManyToOne
-    private @javax.validation.constraints.NotNull Account account;
+    private Account account;
 
     @OneToOne(mappedBy = "decisionMaker")
     private Opportunity opportunity;
@@ -21,7 +23,7 @@ public class Contact {
     public Contact() {
     }
 
-    public Contact(Integer id, String name, String email, String companyName, String phoneNumber, @javax.validation.constraints.NotNull Account account, Opportunity opportunity) {
+    public Contact(Integer id, String name, String email, String companyName, String phoneNumber, Account account, Opportunity opportunity) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -31,7 +33,7 @@ public class Contact {
         this.opportunity = opportunity;
     }
 
-    public Contact(String name, String email, String companyName, String phoneNumber, @javax.validation.constraints.NotNull Account account, Opportunity opportunity) {
+    public Contact(String name, String email, String companyName, String phoneNumber, Account account, Opportunity opportunity) {
         this.name = name;
         this.email = email;
         this.companyName = companyName;
@@ -40,7 +42,7 @@ public class Contact {
         this.opportunity = opportunity;
     }
 
-    public Contact(Integer id, String name, String email, String companyName, String phoneNumber, @javax.validation.constraints.NotNull Account account) {
+    public Contact(Integer id, String name, String email, String companyName, String phoneNumber, Account account) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -49,7 +51,7 @@ public class Contact {
         this.account = account;
     }
 
-    public Contact(String name, String email, String companyName, String phoneNumber, @javax.validation.constraints.NotNull Account account) {
+    public Contact(String name, String email, String companyName, String phoneNumber, Account account) {
         this.name = name;
         this.email = email;
         this.companyName = companyName;
@@ -112,11 +114,11 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
-    public @javax.validation.constraints.NotNull Account getAccount() {
+    public Account getAccount() {
         return account;
     }
 
-    public void setAccount(@javax.validation.constraints.NotNull Account account) {
+    public void setAccount(Account account) {
         this.account = account;
     }
 

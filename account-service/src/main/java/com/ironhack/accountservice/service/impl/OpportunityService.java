@@ -17,16 +17,22 @@ import java.util.*;
 public class OpportunityService implements IOpportunityService {
 
     @Autowired
-    IContactService contactService;
+    private IContactService contactService;
 
     @Autowired
-    OpportunityRepository opportunityRepository;
+    private IAccountService accountService;
 
     @Autowired
-    AccountRepository accountRepository;
+    private OpportunityRepository opportunityRepository;
 
     @Autowired
-    LeadClient leadClient;
+    private AccountRepository accountRepository;
+
+    @Autowired
+    private ContactRepository contactRepository;
+
+    @Autowired
+    private LeadClient leadClient;
 
     @Override
     public OpportunityDTO getOpportunity(Integer id) {
@@ -34,8 +40,12 @@ public class OpportunityService implements IOpportunityService {
 
             Opportunity opportunity = opportunityRepository.findById(id).get();
 
-            return new OpportunityDTO(opportunity.getId(),opportunity.getProduct(),  opportunity.getQuantity(), opportunity.getDecisionMaker(),
-                    opportunity.getStatus(), opportunity.getSalesRep(), opportunity.getAccount());
+            AccountDTO accountDTO = accountService.getAccount(opportunity.getAccount().getId());
+
+            ContactDTO contactDTO = contactService.getContact(opportunity.getDecisionMaker().getId());
+
+            return new OpportunityDTO(opportunity.getId(),opportunity.getProduct(),  opportunity.getQuantity(), contactDTO,
+                    opportunity.getStatus(), opportunity.getSalesRep(), accountDTO);
         } else {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Opportunity not found");
         }
@@ -44,17 +54,22 @@ public class OpportunityService implements IOpportunityService {
     @Override
     public OpportunityDTO postOpportunity(Integer leadId, Integer accountId, PurchaseDTO purchaseDTO) {
 
-        LeadDTO leadDTO= leadClient.getById(leadId);
+        LeadDTO leadDTO = leadClient.getById(leadId);
 
-        Optional<Account> account=accountRepository.findById(accountId);
+        Account account = accountRepository.findById(accountId).get();
 
-        Contact contact=contactService.postContact(leadDTO, account.get());
+        AccountDTO accountDTO = new AccountDTO(account.getId(), account.getCompanyName(), account.getIndustry(),
+                account.getEmployeeCount(), account.getCity(), account.getCountry());
 
-        Opportunity opportunity=opportunityRepository.save(new Opportunity(purchaseDTO.getProduct(), purchaseDTO.getQuantity(),
-                contact, Status.OPEN,account.get(), leadDTO.getSalesRepId()));
+        ContactDTO contactDTO = contactService.postContact(leadDTO, accountDTO);
 
-        OpportunityDTO opportunityDTO=new OpportunityDTO(opportunity.getId(), opportunity.getProduct(), opportunity.getQuantity(),
-               opportunity.getDecisionMaker(), opportunity.getStatus(),opportunity.getSalesRep(),account.get());
+        Contact contact = contactRepository.findById(contactDTO.getId()).get();
+
+        Opportunity opportunity = opportunityRepository.save(new Opportunity(purchaseDTO.getProduct(), purchaseDTO.getQuantity(),
+                contact, Status.OPEN, account, leadDTO.getSalesRepId()));
+
+        OpportunityDTO opportunityDTO = new OpportunityDTO(opportunity.getId(), opportunity.getProduct(), opportunity.getQuantity(),
+               contactDTO, opportunity.getStatus(), opportunity.getSalesRep(), accountDTO);
 
         return opportunityDTO;
     }

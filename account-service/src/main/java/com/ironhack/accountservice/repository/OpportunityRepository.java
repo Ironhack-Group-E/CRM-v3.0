@@ -10,24 +10,28 @@ import java.util.List;
 @Repository
 public interface OpportunityRepository extends JpaRepository<Opportunity, Integer> {
 
-    //Returns a list of names and count of all Opportunities by SalesRep
-    @Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRep " +
-            "GROUP BY s.name")
-    List<Object[]> countOfOpportunitiesBySalesReps();
+    //Returns a list of ids and count of all Opportunities by SalesRep
+    /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
+            "GROUP BY s.name")*/
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity GROUP BY salesRepId")
+    List<Object[]> countOfOpportunitiesBySalesRepId();
 
     //Returns a list of names and count of all Opportunities by SalesRep where status is CLOSED_WON
-    @Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRep " +
-            "WHERE o.status = Status.CLOSED_WON GROUP BY s.name")
+    /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
+            "WHERE o.status = CLOSED_WON GROUP BY s.name")*/
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = CLOSED_WON GROUP BY salesRepId")
     List<Object[]> countOfOpportunitiesBySalesRepsWhereClosedWon();
 
     //Returns a list of names and count of all Opportunities by SalesRep where status is CLOSED_LOST
-    @Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRep " +
-            "WHERE o.status = Status.CLOSED_LOST GROUP BY s.name")
+    /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
+            "WHERE o.status = CLOSED_LOST GROUP BY s.name")*/
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = CLOSED_LOST GROUP BY salesRepId")
     List<Object[]> countOfOpportunitiesBySalesRepsWhereClosedLost();
 
     //Returns a list of names and count of all Opportunities by SalesRep where status is OPEN
-    @Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRep " +
-            "WHERE o.status = Status.OPEN GROUP BY s.name")
+    /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
+            "WHERE o.status = OPEN GROUP BY s.name")*/
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = OPEN GROUP BY salesRepId")
     List<Object[]> countOfOpportunitiesBySalesRepsWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Product
@@ -36,17 +40,17 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
 
     //Returns a list of products and count of all Opportunities by Product where status is CLOSED_WON
     @Query(value = "SELECT product, COUNT(*) FROM Opportunity " +
-            "WHERE status = Status.CLOSED_WON GROUP BY product")
+            "WHERE status = CLOSED_WON GROUP BY product")
     List<Object[]> countOfOpportunitiesByProductWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by Product where status is CLOSED_LOST
     @Query(value = "SELECT product, COUNT(*) FROM Opportunity " +
-            "WHERE status = Status.CLOSED_LOST GROUP BY product")
+            "WHERE status = CLOSED_LOST GROUP BY product")
     List<Object[]> countOfOpportunitiesByProductWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by Product where status is OPEN
     @Query(value = "SELECT product, COUNT(*) FROM Opportunity " +
-            "WHERE status = Status.OPEN GROUP BY product")
+            "WHERE status = OPEN GROUP BY product")
     List<Object[]> countOfOpportunitiesByProductWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Country
@@ -56,17 +60,17 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
 
     //Returns a list of products and count of all Opportunities by Country where status is CLOSED_WON
     @Query(value = "SELECT a.country, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.CLOSED_WON GROUP BY a.country")
+            "WHERE o.status = CLOSED_WON GROUP BY a.country")
     List<Object[]> countOfOpportunitiesByCountryWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by Country where status is CLOSED_LOST
     @Query(value = "SELECT a.country, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.CLOSED_LOST GROUP BY a.country")
+            "WHERE o.status = CLOSED_LOST GROUP BY a.country")
     List<Object[]> countOfOpportunitiesByCountryWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by Country where status is OPEN
     @Query(value = "SELECT a.country, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.OPEN GROUP BY a.country")
+            "WHERE o.status = OPEN GROUP BY a.country")
     List<Object[]> countOfOpportunitiesByCountryWhereOpen();
 
     //Returns a list of products and count of all Opportunities by City
@@ -76,17 +80,17 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
 
     //Returns a list of products and count of all Opportunities by City where status is CLOSED_WON
     @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.CLOSED_WON GROUP BY a.city")
+            "WHERE o.status = CLOSED_WON GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCityWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by City where status is CLOSED_LOST
     @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.CLOSED_LOST GROUP BY a.city")
+            "WHERE o.status = CLOSED_LOST GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCityWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by City where status is OPEN
     @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.OPEN GROUP BY a.city")
+            "WHERE o.status = OPEN GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCityWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Industry
@@ -96,17 +100,17 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
 
     //Returns a list of products and count of all Opportunities by Industry where status is CLOSED_WON
     @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.CLOSED_WON GROUP BY a.industry")
+            "WHERE o.status = CLOSED_WON GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustryWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by Industry where status is CLOSED_LOST
     @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.CLOSED_LOST GROUP BY a.industry")
+            "WHERE o.status = CLOSED_LOST GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustryWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by Industry where status is OPEN
     @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = Status.OPEN GROUP BY a.industry")
+            "WHERE o.status = OPEN GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustryWhereOpen();
 
 
@@ -131,6 +135,6 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
     Integer countBySalesRepId(Integer salesRepId);
 
     //Return a count of Opportunities for a specific SalesRep Name
-    Integer countBySalesRepName(String salesRep);
+    //Integer countBySalesRepName(String salesRep);
 
 }

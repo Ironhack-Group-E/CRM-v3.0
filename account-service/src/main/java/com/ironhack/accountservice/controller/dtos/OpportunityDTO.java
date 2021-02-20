@@ -14,18 +14,16 @@ public class OpportunityDTO {
     private Product product;
     @Min(0)
     private int quantity;
-    @NotNull
-    private Contact decisionMaker;
+    private ContactDTO decisionMaker;
     private Status status;
     @Min(1)
     private Integer salesRepId;
-    @NotNull
-    private Account account;
+    private AccountDTO account;
 
     public OpportunityDTO() {
     }
 
-    public OpportunityDTO(Integer id, Product product, int quantity, Contact decisionMaker, Status status, Integer salesRepId, Account account) {
+    public OpportunityDTO(Integer id, Product product, int quantity, ContactDTO decisionMaker, Status status, Integer salesRepId, AccountDTO account) {
         this.id = id;
         this.product = product;
         this.quantity = quantity;
@@ -35,7 +33,7 @@ public class OpportunityDTO {
         this.account = account;
     }
 
-    public OpportunityDTO(Product product, int quantity, Contact decisionMaker, Status status, Integer salesRepId, Account account) {
+    public OpportunityDTO(Product product, int quantity, ContactDTO decisionMaker, Status status, Integer salesRepId, AccountDTO account) {
         this.product = product;
         this.quantity = quantity;
         this.decisionMaker = decisionMaker;
@@ -68,11 +66,11 @@ public class OpportunityDTO {
         this.quantity = quantity;
     }
 
-    public Contact getDecisionMaker() {
+    public ContactDTO getDecisionMaker() {
         return decisionMaker;
     }
 
-    public void setDecisionMaker(Contact decisionMaker) {
+    public void setDecisionMaker(ContactDTO decisionMaker) {
         this.decisionMaker = decisionMaker;
     }
 
@@ -92,11 +90,11 @@ public class OpportunityDTO {
         this.salesRepId = salesRepId;
     }
 
-    public Account getAccount() {
+    public AccountDTO getAccount() {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount(AccountDTO account) {
         this.account = account;
     }
 }
