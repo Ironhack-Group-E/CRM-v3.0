@@ -111,7 +111,7 @@ public class OpportunityService implements IOpportunityService {
 
         status = status.toUpperCase();
 
-        if(!status.equals("CLOSE_WON") && !status.equals("CLOSE_LOST")) {
+        if(!status.equals("CLOSED_WON") && !status.equals("CLOSED_LOST")) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Status not value, must be 'CLOSE_WON' or 'CLOSE_LOST' (case insensitive)");
         }
 
