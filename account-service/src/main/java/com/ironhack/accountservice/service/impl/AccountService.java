@@ -33,8 +33,9 @@ public class AccountService implements IAccountService {
         Account account = new Account(accountDTO.getCompanyName(), accountDTO.getIndustry(),
                 accountDTO.getEmployeeCount(), accountDTO.getCity(), accountDTO.getCountry());
 
-        accountRepository.save(account);
+        account = accountRepository.save(account);
 
+        accountDTO.setId(account.getId());
         return accountDTO;
     }
 }
