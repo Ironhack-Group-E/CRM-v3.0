@@ -40,6 +40,6 @@ public interface AccountClient {
                                           @PathVariable ("accountId") Integer accountId,
                                           @RequestBody PurchaseDTO purchaseDTO);
 
-    @PutMapping("/opportunity/{id}")
+    @PostMapping("/opportunity/{id}")
     OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status);
 }

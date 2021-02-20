@@ -38,7 +38,7 @@ public class OpportunityController implements IOpportunityController {
         return opportunityService.postOpportunity(leadId, accountId, purchaseDTO);
     }
 
-    @PutMapping("/opportunity/{id}")
+    @PostMapping("/opportunity/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status) {
         return opportunityService.closeOpportunity(id, status);
