@@ -1,8 +1,10 @@
 package com.ironhack.manageAllservice.service.impl;
 
+import com.ironhack.manageAllservice.client.AccountClient;
 import com.ironhack.manageAllservice.client.LeadClient;
 import com.ironhack.manageAllservice.client.SalesRepClient;
 import com.ironhack.manageAllservice.controller.dtos.LeadDTO;
+import com.ironhack.manageAllservice.controller.dtos.OpportunityDTO;
 import com.ironhack.manageAllservice.controller.dtos.SalesRepDTO;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class ManageAllService implements IManageAllService {
     @Autowired
     private SalesRepClient salesRepClient;
 
+    @Autowired
+    private AccountClient accountClient;
+
     private CircuitBreakerFactory circuitBreakerFactory = new Resilience4JCircuitBreakerFactory();
 
     public SalesRepDTO newSalesRep(SalesRepDTO salesRepDTO) {
@@ -36,7 +41,7 @@ public class ManageAllService implements IManageAllService {
     }
 
     private SalesRepDTO postSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SaleRep service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SaleRep service not available");
     }
 
     public LeadDTO newLead(LeadDTO leadDTO) {
@@ -58,10 +63,24 @@ public class ManageAllService implements IManageAllService {
     }
 
     private SalesRepDTO getSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SalesRep service not available or salesRep not found");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SalesRep service not available or salesRep not found");
     }
 
     private LeadDTO addLeadFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Lead service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Lead service not available");
+    }
+
+    public OpportunityDTO closeOpportunity(Integer id, String status) {
+
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+
+        OpportunityDTO opportunityDTO = circuitBreaker.run(() -> accountClient.closeOpportunity(id, status),
+                throwable -> closeOpportunityFallBack());
+
+        return opportunityDTO;
+    }
+
+    private OpportunityDTO closeOpportunityFallBack() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 }

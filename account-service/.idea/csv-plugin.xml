@@ -24,6 +24,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\main\java\com\ironhack\accountservice\controller\impl\OpportunityController.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\main\java\com\ironhack\accountservice\model\Account.java">
           <value>
             <Attribute>
@@ -53,6 +60,13 @@
           </value>
         </entry>
         <entry key="\src\main\java\com\ironhack\accountservice\service\impl\AccountService.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\accountservice\service\impl\OpportunityService.java">
           <value>
             <Attribute>
               <option name="separator" value=";" />

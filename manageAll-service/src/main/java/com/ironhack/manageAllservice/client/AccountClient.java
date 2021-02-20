@@ -5,10 +5,7 @@ import com.ironhack.manageAllservice.controller.dtos.ContactDTO;
 import com.ironhack.manageAllservice.controller.dtos.OpportunityDTO;
 import com.ironhack.manageAllservice.controller.dtos.PurchaseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient("account-service")
 public interface AccountClient {
@@ -29,4 +26,7 @@ public interface AccountClient {
     OpportunityDTO postOpportunity(@PathVariable ("leadId") Integer leadId,
                                           @PathVariable ("accountId") Integer accountId,
                                           @RequestBody PurchaseDTO purchaseDTO);
+
+    @PutMapping("/opportunity/{id}")
+    OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status);
 }
