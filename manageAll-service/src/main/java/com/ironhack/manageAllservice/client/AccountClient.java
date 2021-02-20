@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @FeignClient("account-service")
 public interface AccountClient {
@@ -38,4 +39,7 @@ public interface AccountClient {
     OpportunityDTO postOpportunity(@PathVariable ("leadId") Integer leadId,
                                           @PathVariable ("accountId") Integer accountId,
                                           @RequestBody PurchaseDTO purchaseDTO);
+
+    @PutMapping("/opportunity/{id}")
+    OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status);
 }

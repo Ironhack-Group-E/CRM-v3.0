@@ -108,4 +108,9 @@ public class ManageAllController implements IManageAllController {
 
 
 
+
+    @PutMapping("/close-opportunity/{id}")
+    public OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status) {
+        return manageAllService.closeOpportunity(id, status);
+    }
 }

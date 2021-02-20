@@ -1,17 +1,21 @@
 package com.ironhack.accountservice.service.impl;
 
-import com.ironhack.accountservice.controller.client.*;
+import com.ironhack.accountservice.controller.client.LeadClient;
 import com.ironhack.accountservice.controller.dtos.*;
-import com.ironhack.accountservice.enums.*;
-import com.ironhack.accountservice.model.*;
-import com.ironhack.accountservice.repository.*;
-import com.ironhack.accountservice.service.interfaces.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.http.*;
+import com.ironhack.accountservice.enums.Status;
+import com.ironhack.accountservice.model.Account;
+import com.ironhack.accountservice.model.Contact;
+import com.ironhack.accountservice.model.Opportunity;
+import com.ironhack.accountservice.repository.AccountRepository;
+import com.ironhack.accountservice.repository.ContactRepository;
+import com.ironhack.accountservice.repository.OpportunityRepository;
+import com.ironhack.accountservice.service.interfaces.IAccountService;
+import com.ironhack.accountservice.service.interfaces.IContactService;
+import com.ironhack.accountservice.service.interfaces.IOpportunityService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.*;
-
-import java.util.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class OpportunityService implements IOpportunityService {
@@ -95,4 +99,32 @@ public class OpportunityService implements IOpportunityService {
 
         return opportunityDTO;
     }
+
+    public OpportunityDTO closeOpportunity(Integer id, String status) {
+
+        if(!opportunityRepository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Opportunity not found");
+        }
+
+        status = status.toUpperCase();
+
+        if(!status.equals("CLOSE_WON") && !status.equals("CLOSE_LOST")) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Status not value, must be 'CLOSE_WON' or 'CLOSE_LOST' (case insensitive)");
+        }
+
+        Opportunity opportunity = opportunityRepository.findById(id).get();
+
+        opportunity.setStatus(Status.valueOf(status.toUpperCase()));
+
+        opportunity = opportunityRepository.save(opportunity);
+
+        AccountDTO accountDTO = accountService.getAccount(opportunity.getAccount().getId());
+
+        ContactDTO contactDTO = contactService.getContact(opportunity.getDecisionMaker().getId());
+
+        return new OpportunityDTO(opportunity.getId(), opportunity.getProduct(), opportunity.getQuantity(),
+                contactDTO, opportunity.getStatus(), opportunity.getSalesRep(), accountDTO);
+    }
+
+
 }

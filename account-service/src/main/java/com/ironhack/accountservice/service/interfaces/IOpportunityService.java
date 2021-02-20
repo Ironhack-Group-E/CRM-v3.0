@@ -13,4 +13,6 @@ public interface IOpportunityService {
 
     OpportunityDTO postOpportunity(Integer leadId, Integer accountId, PurchaseDTO purchaseDTO);
 
+
+    OpportunityDTO closeOpportunity(Integer id, String status);
 }

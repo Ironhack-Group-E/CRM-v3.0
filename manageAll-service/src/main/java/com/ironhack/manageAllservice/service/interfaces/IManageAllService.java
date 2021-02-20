@@ -29,4 +29,6 @@ public interface IManageAllService {
     List<ContactDTO> showContact();
 
     ContactDTO lookUpContact(Integer id);
+
+    OpportunityDTO closeOpportunity(Integer id, String status);
 }

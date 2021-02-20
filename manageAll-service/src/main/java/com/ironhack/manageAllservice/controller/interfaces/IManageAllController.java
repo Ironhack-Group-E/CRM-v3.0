@@ -29,4 +29,6 @@ public interface IManageAllController {
     List<AccountDTO> showAccount();
 
     AccountDTO lookUpAccount(Integer id);
+
+    OpportunityDTO closeOpportunity(Integer id, String status);
 }

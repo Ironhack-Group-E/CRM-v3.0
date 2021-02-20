@@ -43,6 +43,10 @@ public class ManageAllService implements IManageAllService {
         return salesRepDTO2;
     }
 
+    /*private SalesRepDTO postSalesRepFallBack() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SaleRep service not available");
+    }*/
+
     public List<SalesRepDTO> showSalesRep() {
 
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("salesRep-service");
@@ -118,6 +122,16 @@ public class ManageAllService implements IManageAllService {
         return opportunityDTO;
     }
 
+    public OpportunityDTO closeOpportunity(Integer id, String status) {
+
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+
+        OpportunityDTO opportunityDTO = circuitBreaker.run(() -> accountClient.closeOpportunity(id, status),
+                throwable -> closeOpportunityFallBack());
+
+        return opportunityDTO;
+    }
+
 
     /* ---------------------------------- ACCOUNT SERVICE -------------------------------------*/
 
@@ -165,7 +179,7 @@ public class ManageAllService implements IManageAllService {
     /* --------------------------------- FALLBACK METHODS ----------------------------*/
 
     private SalesRepDTO getSalesRepFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "SalesRep service not available or salesRep not found");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "SalesRep service not available or salesRep not found");
     }
 
     private List<SalesRepDTO> getAllSalesRepFallBack() {
@@ -177,7 +191,11 @@ public class ManageAllService implements IManageAllService {
     }
 
     private LeadDTO addLeadFallBack() {
-        throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Lead service not available");
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Lead service not available");
+    }
+
+    private OpportunityDTO closeOpportunityFallBack() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 
     private List<LeadDTO> getAllLeadsFallback() {
