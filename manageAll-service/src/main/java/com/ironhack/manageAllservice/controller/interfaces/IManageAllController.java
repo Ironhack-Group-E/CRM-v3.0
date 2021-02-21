@@ -18,6 +18,10 @@ public interface IManageAllController {
 
     LeadDTO lookUpLead(Integer id);
 
+    OpportunityDTO convertLead(Integer id, Integer idAccount, PurchaseDTO purchaseDTO);
+
+    OpportunityDTO convertLead(Integer id, PurchaseWithAccountDTO purchaseWithAccountDTO);
+
     List<OpportunityDTO> showOpportunity();
 
     OpportunityDTO lookUpOpportunity(Integer id);

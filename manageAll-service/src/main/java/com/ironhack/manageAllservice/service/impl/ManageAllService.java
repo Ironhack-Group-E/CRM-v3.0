@@ -5,6 +5,8 @@ import com.ironhack.manageAllservice.client.LeadClient;
 import com.ironhack.manageAllservice.client.SalesRepClient;
 import com.ironhack.manageAllservice.controller.dtos.*;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
@@ -93,11 +95,41 @@ public class ManageAllService implements IManageAllService {
     public LeadDTO getLeadById(Integer id) {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("lead-service");
 
-        LeadDTO leadDTO = circuitBreaker.run(()->leadClient.getById(id), throwable -> addLeadFallBack());
+        LeadDTO leadDTO = circuitBreaker.run(()->leadClient.getById(id), throwable -> getLeadFallback());
 
         return leadDTO;
     }
 
+    public LeadDTO deleteLead(Integer id) {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("lead-service");
+        LeadDTO leadDTO = circuitBreaker.run(
+                () -> leadClient.delete(id),
+                throwable -> deleteLeadFallback());
+
+        return leadDTO;
+    }
+
+    public OpportunityDTO convertLead(Integer id, Integer idAccount, PurchaseDTO purchaseDTO) {
+        LeadDTO leadDTO = getLeadById(id);
+        AccountDTO accountDTO = lookUpAccount(idAccount);
+
+        OpportunityDTO opportunityDTO = createOpportunity(leadDTO.getId(), accountDTO.getId(), purchaseDTO);
+
+        deleteLead(leadDTO.getId());
+
+        return opportunityDTO;
+    }
+
+    public OpportunityDTO convertLead(Integer id, PurchaseWithAccountDTO purchaseWithAccountDTO) {
+        LeadDTO leadDTO = getLeadById(id);
+
+        AccountDTO accountDTO = purchaseWithAccountDTO.getAccount();
+        accountDTO.setCompanyName(leadDTO.getCompanyName());
+
+        AccountDTO newAccountDTO = createAccount(accountDTO);
+
+        return convertLead(leadDTO.getId(), newAccountDTO.getId(), purchaseWithAccountDTO.getPurchase());
+    }
 
     /* ---------------------------------- OPPORTUNITY SERVICE -------------------------------------*/
 
@@ -128,6 +160,17 @@ public class ManageAllService implements IManageAllService {
         return opportunityDTO;
     }
 
+    public OpportunityDTO createOpportunity(Integer idLead, Integer idAccount, PurchaseDTO purchaseDTO) {
+        CircuitBreaker circuitBreaker2 = circuitBreakerFactory.create("opportunity-service");
+
+        OpportunityDTO opportunityDTO =
+                circuitBreaker2.run(
+                        () -> accountClient.createOpportunity(idLead, idAccount, purchaseDTO),
+                        throwable -> createOpportunityFallback());
+
+        return opportunityDTO;
+    }
+
 
     /* ---------------------------------- ACCOUNT SERVICE -------------------------------------*/
 
@@ -147,6 +190,16 @@ public class ManageAllService implements IManageAllService {
                 throwable -> getAccountFallback());
 
         return accountDTO;
+    }
+
+    public AccountDTO createAccount(AccountDTO accountDTO) {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+
+        AccountDTO newAccountDTO = circuitBreaker.run(
+                () -> accountClient.createAccount(accountDTO),
+                throwable -> createAccountFallback());
+
+        return newAccountDTO;
     }
 
     /* ---------------------------------- CONTACT SERVICE -------------------------------------*/
@@ -222,6 +275,26 @@ public class ManageAllService implements IManageAllService {
     }
 
     private ContactDTO getContactFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+
+    }
+
+    private LeadDTO getLeadFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+
+    }
+
+    private AccountDTO createAccountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+
+    }
+
+    private OpportunityDTO createOpportunityFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+
+    }
+
+    private LeadDTO deleteLeadFallback() {
         throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
     }

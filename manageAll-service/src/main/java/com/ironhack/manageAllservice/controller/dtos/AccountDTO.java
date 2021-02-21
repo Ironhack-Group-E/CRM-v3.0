@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 public class AccountDTO {
 
     private Integer id;
-    @NotEmpty
+    //@NotEmpty
     private String companyName;
     private Industry industry;
     @Min(0)

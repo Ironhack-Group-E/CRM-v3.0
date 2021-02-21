@@ -63,4 +63,19 @@ public class LeadService implements ILeadService {
         leadDTO.setId(lead.getId());
         return leadDTO;
     }
+
+    public LeadDTO delete(Integer id) {
+        if (!repository.existsById(id))
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        Lead lead = repository.findById(id).get();
+        LeadDTO leadDTO = new LeadDTO();
+        leadDTO.setId(id);
+        leadDTO.setSalesRepId(lead.getSalesRepId());
+        leadDTO.setName(lead.getName());
+        leadDTO.setEmail(lead.getEmail());
+        leadDTO.setCompanyName(lead.getCompanyName());
+        leadDTO.setPhoneNumber(lead.getPhoneNumber());
+        repository.deleteById(id);
+        return leadDTO;
+    }
 }

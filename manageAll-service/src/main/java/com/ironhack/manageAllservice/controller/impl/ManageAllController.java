@@ -57,7 +57,17 @@ public class ManageAllController implements IManageAllController {
         return manageAllService.getLeadById(id);
     }
 
+    @PostMapping("/lead/{id}/account/{idAcc}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public OpportunityDTO convertLead(@PathVariable Integer id, @PathVariable("idAcc") Integer idAccount, @RequestBody PurchaseDTO purchaseDTO) {
+        return manageAllService.convertLead(id, idAccount, purchaseDTO);
+    }
 
+    @PostMapping("/lead/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public OpportunityDTO convertLead(@PathVariable Integer id, @RequestBody PurchaseWithAccountDTO purchaseWithAccountDTO) {
+        return manageAllService.convertLead(id, purchaseWithAccountDTO);
+    }
 
     /* -------------------------------------- OPPORTUNITY CONTROLLER-----------------------------------------*/
 

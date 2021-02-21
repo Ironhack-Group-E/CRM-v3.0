@@ -21,7 +21,7 @@ public interface AccountClient {
     List<AccountDTO> getAllAccount();
 
     @PostMapping("/account")
-    AccountDTO postAccount(@RequestBody AccountDTO accountDTO);
+    AccountDTO createAccount(@RequestBody AccountDTO accountDTO);
 
     @GetMapping("/contact/{id}")
     ContactDTO getContact(@PathVariable Integer id);
@@ -36,9 +36,9 @@ public interface AccountClient {
     List<OpportunityDTO> getAllOpportunity();
 
     @PostMapping("/opportunity/{leadId}/{accountId}")
-    OpportunityDTO postOpportunity(@PathVariable ("leadId") Integer leadId,
-                                          @PathVariable ("accountId") Integer accountId,
-                                          @RequestBody PurchaseDTO purchaseDTO);
+    OpportunityDTO createOpportunity(@PathVariable ("leadId") Integer leadId,
+                                     @PathVariable ("accountId") Integer accountId,
+                                     @RequestBody PurchaseDTO purchaseDTO);
 
     @PostMapping("/opportunity/{id}")
     OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status);
