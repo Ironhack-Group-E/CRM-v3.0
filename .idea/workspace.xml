@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e5eb525-5e38-4d95-b62d-726bed9d9f6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../EJD-6.6/phnum-lookup-service/src/main/java/com/ironhack/phnumlookupservice/controller/PhnumLookupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Assessment/src/exam/classes/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Assessment/src/exam/classes/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-2.4" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-2.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Conference.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Conference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Exposition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Exposition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Guest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Speaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/model/Speaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/ConferenceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/ConferenceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/ExpositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/ExpositionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/GuestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-3.8/eventmanagement/src/main/java/com/ironhack/eventmanagement/repository/GuestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/controller/impl/HospitalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/controller/impl/HospitalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/controller/interfaces/IHospitalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/controller/interfaces/IHospitalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/enums/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/enums/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.4/hospitalv2/src/main/java/com/ironhack/hospitalv2/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/dto/DepartmentDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/dto/DepartmentDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/dto/NameDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/dto/NameDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/dto/StatusDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/dto/StatusDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/impl/HospitalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/impl/HospitalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/interfaces/IHospitalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/controller/interfaces/IHospitalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/enums/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/enums/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/repository/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/repository/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/service/impl/HospitalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/service/impl/HospitalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/service/interfaces/IHospitalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Enterprise-Java-Development-4.6/lab4.6/src/main/java/com/ironhack/lab46/service/interfaces/IHospitalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/BookFormatServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/controller/BookFormatController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/dto/BookFormatDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/enums/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/model/Books.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/repository/BooksRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-format-service/src/test/java/com/ironhack/bookformatservice/BookFormatServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/BookServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/controller/BookServiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/dto/BookDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/dto/BookFormatDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/enums/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/enums/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/java/com/ironhack/bookservice/repository/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Enterprise-Java-Development-6.2/book-service/src/test/java/com/ironhack/bookservice/BookServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/classes/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/classes/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/controller/impl/BankingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/controller/impl/BankingSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/controller/interfaces/IBankingSystemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/controller/interfaces/IBankingSystemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/AccountHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/AccountHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Checking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Checking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/CreditCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Savings.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/Savings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/StudentChecking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/StudentChecking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/ThirdParty.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/model/ThirdParty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/CheckingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/CheckingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/CreditCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/CreditCardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/SavingsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/SavingsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/StudentCheckingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/repository/StudentCheckingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/service/impl/BankingSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/java/com/ironhack/bankingsystem/service/impl/BankingSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../banking-system/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../banking-system/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-format-service/src/main/java/com/ironhack/bookformatservice/enums/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book-service/src/main/java/com/ironhack/bookservice/enums/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bucles/src" beforeDir="false" afterPath="$PROJECT_DIR$/../bucles/src" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../exercisesClass211" beforeDir="false" afterPath="$PROJECT_DIR$/../exercisesClass211" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../group-A-weekly-assessment-1" beforeDir="false" afterPath="$PROJECT_DIR$/../group-A-weekly-assessment-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello-world" beforeDir="false" afterPath="$PROJECT_DIR$/../hello-world" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hello-world-service/src/main/java/com/ironhack/helloworldservice/controller/dto/UserEmailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hello-world-service/src/main/java/com/ironhack/helloworldservice/controller/dto/UserEmailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/BookFormatServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/controller/BookFormatController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/dto/BookFormatDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/enums/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/model/Books.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/java/com/ironhack/bookformatservice/repository/BooksRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-format-service/src/test/java/com/ironhack/bookformatservice/BookFormatServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/BookServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/controller/BookServiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/dto/BookDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/dto/BookFormatDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/enums/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/enums/Genre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/java/com/ironhack/bookservice/repository/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab-6.2/book-service/src/test/java/com/ironhack/bookservice/BookServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../laboratorio16" beforeDir="false" afterPath="$PROJECT_DIR$/../laboratorio16" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proyecto1" beforeDir="false" afterPath="$PROJECT_DIR$/../proyecto1" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1oms7xX9FWc0GsozuF7kSfBRL6h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e5eb525-5e38-4d95-b62d-726bed9d9f6f" name="Default Changelist" comment="" />
+      <created>1613902936797</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613902936797</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
