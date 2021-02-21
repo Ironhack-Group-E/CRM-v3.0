@@ -228,21 +228,26 @@ public class ManageAllService implements IManageAllService {
     /* ---------------------------------- REPORTS SERVICE -------------------------------------*/
 
     public List<LeadBySalesRepDTO> reportLeadBySalesRep() {
-        List<LeadBySalesRepDTO> resultList = new ArrayList<>();
 
-        HashMap<String, Integer> totals = new HashMap<>();
+        HashMap<Integer, Integer> totals = new HashMap<>();
+        HashMap<Integer, String> names = new HashMap<>();
+
         List<LeadDTO> leadDTOList = getLeads();
         for(LeadDTO leadDTO : leadDTOList) {
             SalesRepDTO salesRepDTO = getSalesRepById(leadDTO.getSalesRepId());
-            if(!totals.containsKey(salesRepDTO.getName()))
-                totals.put(salesRepDTO.getName(), 0);
-            totals.put(salesRepDTO.getName(), totals.get(salesRepDTO.getName()) + 1);
+            Integer id = salesRepDTO.getId();
+            if(!totals.containsKey(id)) {
+                totals.put(id, 0);
+                names.put(id, salesRepDTO.getName());
+            }
+            totals.put(id, totals.get(id) + 1);
         }
 
-        for(String name : totals.keySet()) {
+        List<LeadBySalesRepDTO> resultList = new ArrayList<>();
+        for(Integer id : totals.keySet()) {
             LeadBySalesRepDTO leadBySalesRepDTO = new LeadBySalesRepDTO();
-            leadBySalesRepDTO.setName(name);
-            leadBySalesRepDTO.setCount(totals.get(name));
+            leadBySalesRepDTO.setName(names.get(id));
+            leadBySalesRepDTO.setCount(totals.get(id));
             resultList.add(leadBySalesRepDTO);
         }
 
