@@ -4,7 +4,8 @@ import com.ironhack.manageAllservice.client.AccountClient;
 import com.ironhack.manageAllservice.client.LeadClient;
 import com.ironhack.manageAllservice.client.SalesRepClient;
 import com.ironhack.manageAllservice.controller.dtos.*;
-import com.ironhack.manageAllservice.controller.dtos.report.LeadBySalesRepDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.OpportunityBySalesRepDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
@@ -227,7 +228,7 @@ public class ManageAllService implements IManageAllService {
 
     /* ---------------------------------- REPORTS SERVICE -------------------------------------*/
 
-    public List<LeadBySalesRepDTO> reportLeadBySalesRep() {
+    public List<ReportDTO> reportLeadBySalesRep() {
 
         HashMap<Integer, Integer> totals = new HashMap<>();
         HashMap<Integer, String> names = new HashMap<>();
@@ -243,15 +244,66 @@ public class ManageAllService implements IManageAllService {
             totals.put(id, totals.get(id) + 1);
         }
 
-        List<LeadBySalesRepDTO> resultList = new ArrayList<>();
+        List<ReportDTO> resultList = new ArrayList<>();
         for(Integer id : totals.keySet()) {
-            LeadBySalesRepDTO leadBySalesRepDTO = new LeadBySalesRepDTO();
-            leadBySalesRepDTO.setName(names.get(id));
-            leadBySalesRepDTO.setCount(totals.get(id));
-            resultList.add(leadBySalesRepDTO);
+            ReportDTO reportDTO = new ReportDTO();
+            reportDTO.setName(names.get(id));
+            reportDTO.setCount(totals.get(id));
+            resultList.add(reportDTO);
         }
 
         return resultList;
+    }
+
+    public List<ReportDTO> reportOpportunityBySalesRep() {
+
+        List<OpportunityBySalesRepDTO> result = accountClient.reportOpportunityBySalesRep();
+
+        List<ReportDTO> resultWithNames = getReportDTOS(result);
+
+        return resultWithNames;
+    }
+
+    public List<ReportDTO> reportOpportunityClosedWonBySalesRep() {
+
+        List<OpportunityBySalesRepDTO> result = accountClient.reportOpportunityClosedWonBySalesRep();
+
+        List<ReportDTO> resultWithNames = getReportDTOS(result);
+
+        return resultWithNames;
+    }
+
+    public List<ReportDTO> reportOpportunityClosedLostBySalesRep() {
+
+        List<OpportunityBySalesRepDTO> result = accountClient.reportOpportunityClosedLostBySalesRep();
+
+        List<ReportDTO> resultWithNames = getReportDTOS(result);
+
+        return resultWithNames;
+    }
+
+    public List<ReportDTO> reportOpportunityOpenBySalesRep() {
+
+        List<OpportunityBySalesRepDTO> result = accountClient.reportOpportunityOpenBySalesRep();
+
+        List<ReportDTO> resultWithNames = getReportDTOS(result);
+
+        return resultWithNames;
+    }
+
+    /* --------------------------------- UTILITY METHODS ----------------------------*/
+
+
+    private List<ReportDTO> getReportDTOS(List<OpportunityBySalesRepDTO> result) {
+        List<ReportDTO> resultWithNames = new ArrayList<>();
+        for (OpportunityBySalesRepDTO opportunityBySalesRepDTO : result) {
+            SalesRepDTO salesRepDTO = getSalesRepById(opportunityBySalesRepDTO.getSalesRepId());
+            ReportDTO reportDTO = new ReportDTO();
+            reportDTO.setName(salesRepDTO.getName());
+            reportDTO.setCount(opportunityBySalesRepDTO.getCount());
+            resultWithNames.add(reportDTO);
+        }
+        return resultWithNames;
     }
 
 

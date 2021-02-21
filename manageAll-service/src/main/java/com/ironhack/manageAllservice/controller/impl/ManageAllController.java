@@ -1,7 +1,7 @@
 package com.ironhack.manageAllservice.controller.impl;
 
 import com.ironhack.manageAllservice.controller.dtos.*;
-import com.ironhack.manageAllservice.controller.dtos.report.LeadBySalesRepDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
 import com.ironhack.manageAllservice.controller.interfaces.IManageAllController;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,7 +124,31 @@ public class ManageAllController implements IManageAllController {
 
     @GetMapping("/report/lead/by/salesrep")
     @ResponseStatus(HttpStatus.OK)
-    public List<LeadBySalesRepDTO> reportLeadBySalesRep() {
+    public List<ReportDTO> reportLeadBySalesRep() {
         return manageAllService.reportLeadBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ReportDTO> reportOpportunityBySalesRep() {
+        return manageAllService.reportOpportunityBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ReportDTO> reportOpportunityClosedWonBySalesRep() {
+        return manageAllService.reportOpportunityClosedWonBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ReportDTO> reportOpportunityClosedLostBySalesRep() {
+        return manageAllService.reportOpportunityClosedLostBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/open/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ReportDTO> reportOpportunityOpenBySalesRep() {
+        return manageAllService.reportOpportunityOpenBySalesRep();
     }
 }

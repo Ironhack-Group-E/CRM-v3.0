@@ -2,6 +2,7 @@ package com.ironhack.accountservice.service.impl;
 
 import com.ironhack.accountservice.controller.client.LeadClient;
 import com.ironhack.accountservice.controller.dtos.*;
+import com.ironhack.accountservice.controller.dtos.report.OpportunityBySalesRepDTO;
 import com.ironhack.accountservice.enums.Status;
 import com.ironhack.accountservice.model.Account;
 import com.ironhack.accountservice.model.Contact;
@@ -127,6 +128,58 @@ public class OpportunityService implements IOpportunityService {
 
         return new OpportunityDTO(opportunity.getId(), opportunity.getProduct(), opportunity.getQuantity(),
                 contactDTO, opportunity.getStatus(), opportunity.getSalesRep(), accountDTO);
+    }
+
+    public List<OpportunityBySalesRepDTO> reportOpportunityBySalesRep() {
+
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepId();
+
+        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            result.add(opportunityBySalesRepDTO);
+        }
+
+        return result;
+    }
+
+    public List<OpportunityBySalesRepDTO> reportOpportunityClosedWonBySalesRep() {
+
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepsWhereClosedWon();
+
+        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            result.add(opportunityBySalesRepDTO);
+        }
+
+        return result;
+    }
+
+    public List<OpportunityBySalesRepDTO> reportOpportunityClosedLostBySalesRep() {
+
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepsWhereClosedLost();
+
+        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            result.add(opportunityBySalesRepDTO);
+        }
+
+        return result;
+    }
+
+    public List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep() {
+
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepsWhereOpen();
+
+        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            result.add(opportunityBySalesRepDTO);
+        }
+
+        return result;
     }
 
 

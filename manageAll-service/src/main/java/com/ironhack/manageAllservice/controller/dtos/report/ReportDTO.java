@@ -1,6 +1,6 @@
 package com.ironhack.manageAllservice.controller.dtos.report;
 
-public class LeadBySalesRepDTO {
+public class ReportDTO {
     private String name;
     private Integer count;
 

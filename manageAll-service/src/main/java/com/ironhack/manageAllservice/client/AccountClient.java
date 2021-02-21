@@ -4,6 +4,7 @@ import com.ironhack.manageAllservice.controller.dtos.AccountDTO;
 import com.ironhack.manageAllservice.controller.dtos.ContactDTO;
 import com.ironhack.manageAllservice.controller.dtos.OpportunityDTO;
 import com.ironhack.manageAllservice.controller.dtos.PurchaseDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.OpportunityBySalesRepDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -42,4 +43,16 @@ public interface AccountClient {
 
     @PostMapping("/opportunity/{id}")
     OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status);
+
+    @GetMapping("/report/opportunity/by/salesrep")
+    List<OpportunityBySalesRepDTO> reportOpportunityBySalesRep();
+
+    @GetMapping("/report/opportunity/closed-won/by/salesrep")
+    List<OpportunityBySalesRepDTO> reportOpportunityClosedWonBySalesRep();
+
+    @GetMapping("/report/opportunity/closed-lost/by/salesrep")
+    List<OpportunityBySalesRepDTO> reportOpportunityClosedLostBySalesRep();
+
+    @GetMapping("/report/opportunity/open/by/salesrep")
+    List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep();
 }

@@ -1,6 +1,7 @@
 package com.ironhack.accountservice.controller.impl;
 
 import com.ironhack.accountservice.controller.dtos.*;
+import com.ironhack.accountservice.controller.dtos.report.OpportunityBySalesRepDTO;
 import com.ironhack.accountservice.controller.interfaces.IOpportunityController;
 import com.ironhack.accountservice.enums.Status;
 import com.ironhack.accountservice.model.*;
@@ -10,6 +11,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.*;
+import java.util.HashMap;
 import java.util.List;
 
 @RestController
@@ -42,5 +44,29 @@ public class OpportunityController implements IOpportunityController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status) {
         return opportunityService.closeOpportunity(id, status);
+    }
+
+    @GetMapping("/report/opportunity/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityBySalesRepDTO> reportOpportunityBySalesRep() {
+        return opportunityService.reportOpportunityBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityBySalesRepDTO> reportOpportunityClosedWonBySalesRep() {
+        return opportunityService.reportOpportunityClosedWonBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityBySalesRepDTO> reportOpportunityClosedLostBySalesRep() {
+        return opportunityService.reportOpportunityClosedLostBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/open/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep() {
+        return opportunityService.reportOpportunityOpenBySalesRep();
     }
 }
