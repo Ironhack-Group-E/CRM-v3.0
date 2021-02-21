@@ -254,6 +254,14 @@ public class ManageAllService implements IManageAllService {
         return resultList;
     }
 
+    public Integer reportMaxEmployeeCount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer maxEmployeeCount = circuitBreaker.run(() -> accountClient.getMaxEmployeeCount(),
+                throwable -> getMaxEmployeeCountFallback());
+        return maxEmployeeCount;
+    }
+
+
 
     /* --------------------------------- FALLBACK METHODS ----------------------------*/
 
@@ -327,6 +335,10 @@ public class ManageAllService implements IManageAllService {
     private LeadDTO deleteLeadFallback() {
         throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
+    }
+
+    private Integer getMaxEmployeeCountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 
 }

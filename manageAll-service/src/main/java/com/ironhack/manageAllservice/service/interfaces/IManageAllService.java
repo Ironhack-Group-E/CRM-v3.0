@@ -38,4 +38,6 @@ public interface IManageAllService {
     OpportunityDTO closeOpportunity(Integer id, String status);
 
     List<LeadBySalesRepDTO> reportLeadBySalesRep();
+
+    Integer reportMaxEmployeeCount();
 }
