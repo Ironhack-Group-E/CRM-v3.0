@@ -1,6 +1,7 @@
 package com.ironhack.manageAllservice.controller.impl;
 
 import com.ironhack.manageAllservice.controller.dtos.*;
+import com.ironhack.manageAllservice.controller.dtos.report.LeadBySalesRepDTO;
 import com.ironhack.manageAllservice.controller.interfaces.IManageAllController;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.ws.rs.Path;
 import java.util.List;
 
 @RestController
@@ -48,7 +48,7 @@ public class ManageAllController implements IManageAllController {
     @GetMapping("/lead")
     @ResponseStatus(HttpStatus.OK)
     public List<LeadDTO> showLeads() {
-        return manageAllService.showLeads();
+        return manageAllService.getLeads();
     }
 
     @GetMapping("/lead/{id}")
@@ -117,5 +117,14 @@ public class ManageAllController implements IManageAllController {
     @PostMapping("/close-opportunity/{id}")
     public OpportunityDTO closeOpportunity(@PathVariable Integer id, @RequestParam String status) {
         return manageAllService.closeOpportunity(id, status);
+    }
+
+
+    /* -------------------------------------- REPORTS CONTROLLER -----------------------------------------*/
+
+    @GetMapping("/report/lead/by/salesrep")
+    @ResponseStatus(HttpStatus.OK)
+    public List<LeadBySalesRepDTO> reportLeadBySalesRep() {
+        return manageAllService.reportLeadBySalesRep();
     }
 }

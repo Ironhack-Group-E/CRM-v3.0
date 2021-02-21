@@ -1,6 +1,7 @@
 package com.ironhack.manageAllservice.controller.interfaces;
 
 import com.ironhack.manageAllservice.controller.dtos.*;
+import com.ironhack.manageAllservice.controller.dtos.report.LeadBySalesRepDTO;
 
 import java.util.List;
 
@@ -35,4 +36,8 @@ public interface IManageAllController {
     AccountDTO lookUpAccount(Integer id);
 
     OpportunityDTO closeOpportunity(Integer id, String status);
+
+    // Reports
+
+    List<LeadBySalesRepDTO> reportLeadBySalesRep();
 }

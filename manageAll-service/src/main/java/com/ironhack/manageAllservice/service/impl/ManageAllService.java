@@ -4,9 +4,8 @@ import com.ironhack.manageAllservice.client.AccountClient;
 import com.ironhack.manageAllservice.client.LeadClient;
 import com.ironhack.manageAllservice.client.SalesRepClient;
 import com.ironhack.manageAllservice.controller.dtos.*;
+import com.ironhack.manageAllservice.controller.dtos.report.LeadBySalesRepDTO;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
@@ -15,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -83,7 +84,7 @@ public class ManageAllService implements IManageAllService {
         return leadDTO2;
     }
 
-    public List<LeadDTO> showLeads() {
+    public List<LeadDTO> getLeads() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("lead-service");
 
         List<LeadDTO> leadDTOList = circuitBreaker.run(()->leadClient.getAll(),
@@ -223,6 +224,30 @@ public class ManageAllService implements IManageAllService {
         return contactDTO;
     }
 
+
+    /* ---------------------------------- REPORTS SERVICE -------------------------------------*/
+
+    public List<LeadBySalesRepDTO> reportLeadBySalesRep() {
+        List<LeadBySalesRepDTO> resultList = new ArrayList<>();
+
+        HashMap<String, Integer> totals = new HashMap<>();
+        List<LeadDTO> leadDTOList = getLeads();
+        for(LeadDTO leadDTO : leadDTOList) {
+            SalesRepDTO salesRepDTO = getSalesRepById(leadDTO.getSalesRepId());
+            if(!totals.containsKey(salesRepDTO.getName()))
+                totals.put(salesRepDTO.getName(), 0);
+            totals.put(salesRepDTO.getName(), totals.get(salesRepDTO.getName()) + 1);
+        }
+
+        for(String name : totals.keySet()) {
+            LeadBySalesRepDTO leadBySalesRepDTO = new LeadBySalesRepDTO();
+            leadBySalesRepDTO.setName(name);
+            leadBySalesRepDTO.setCount(totals.get(name));
+            resultList.add(leadBySalesRepDTO);
+        }
+
+        return resultList;
+    }
 
 
     /* --------------------------------- FALLBACK METHODS ----------------------------*/
