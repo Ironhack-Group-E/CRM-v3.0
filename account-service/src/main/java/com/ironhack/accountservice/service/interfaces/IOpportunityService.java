@@ -1,10 +1,9 @@
 package com.ironhack.accountservice.service.interfaces;
 
 import com.ironhack.accountservice.controller.dtos.*;
-import com.ironhack.accountservice.controller.dtos.report.OpportunityBySalesRepDTO;
-import com.ironhack.accountservice.model.*;
+import com.ironhack.accountservice.controller.dtos.report.*;
 
-import java.util.List;
+import java.util.*;
 
 public interface IOpportunityService {
 
@@ -32,4 +31,12 @@ public interface IOpportunityService {
     double getAverageQuantity();
 
     double getMedianQuantity();
+
+    List<OpportunityByProductDTO> reportOpportunityByProduct();
+
+    List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct();
+
+    List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct();
+
+    List<OpportunityByProductDTO> reportOpportunityOpenByProduct();
 }

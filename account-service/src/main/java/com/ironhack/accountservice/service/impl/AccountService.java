@@ -2,8 +2,8 @@ package com.ironhack.accountservice.service.impl;
 
 import com.ironhack.accountservice.controller.dtos.AccountDTO;
 import com.ironhack.accountservice.model.Account;
-import com.ironhack.accountservice.repository.AccountRepository;
-import com.ironhack.accountservice.service.interfaces.IAccountService;
+import com.ironhack.accountservice.repository.*;
+import com.ironhack.accountservice.service.interfaces.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

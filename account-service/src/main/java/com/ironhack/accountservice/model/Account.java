@@ -1,6 +1,6 @@
 package com.ironhack.accountservice.model;
 
-import com.ironhack.accountservice.enums.Industry;
+import com.ironhack.accountservice.enums.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;

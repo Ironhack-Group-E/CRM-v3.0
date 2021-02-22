@@ -2,8 +2,8 @@ package com.ironhack.accountservice.service.impl;
 
 import com.ironhack.accountservice.controller.client.LeadClient;
 import com.ironhack.accountservice.controller.dtos.*;
-import com.ironhack.accountservice.controller.dtos.report.OpportunityBySalesRepDTO;
-import com.ironhack.accountservice.enums.Status;
+import com.ironhack.accountservice.controller.dtos.report.*;
+import com.ironhack.accountservice.enums.*;
 import com.ironhack.accountservice.model.Account;
 import com.ironhack.accountservice.model.Contact;
 import com.ironhack.accountservice.model.Opportunity;
@@ -136,12 +136,13 @@ public class OpportunityService implements IOpportunityService {
 
         List<OpportunityBySalesRepDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
             result.add(opportunityBySalesRepDTO);
         }
 
         return result;
     }
+
 
     public List<OpportunityBySalesRepDTO> reportOpportunityClosedWonBySalesRep() {
 
@@ -149,7 +150,7 @@ public class OpportunityService implements IOpportunityService {
 
         List<OpportunityBySalesRepDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
             result.add(opportunityBySalesRepDTO);
         }
 
@@ -162,7 +163,7 @@ public class OpportunityService implements IOpportunityService {
 
         List<OpportunityBySalesRepDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
             result.add(opportunityBySalesRepDTO);
         }
 
@@ -175,7 +176,7 @@ public class OpportunityService implements IOpportunityService {
 
         List<OpportunityBySalesRepDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Integer) objects[1]);
+            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
             result.add(opportunityBySalesRepDTO);
         }
 
@@ -210,5 +211,58 @@ public class OpportunityService implements IOpportunityService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no trucks ordered");
         } else return medianQuantity;
     }
+
+
+    public List<OpportunityByProductDTO> reportOpportunityByProduct() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByProduct();
+
+        List<OpportunityByProductDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityByProductDTO opportunityByProductDTO = new OpportunityByProductDTO( objects[0].toString(), (Long) objects[1]);
+            result.add(opportunityByProductDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon();
+
+        List<OpportunityByProductDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityByProductDTO opportunityByProductDTO = new OpportunityByProductDTO( objects[0].toString(), (Long) objects[1]);
+            result.add(opportunityByProductDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByProductWhereClosedLost();
+
+        List<OpportunityByProductDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityByProductDTO opportunityByProductDTO = new OpportunityByProductDTO( objects[0].toString(), (Long) objects[1]);
+            result.add(opportunityByProductDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunityByProductDTO> reportOpportunityOpenByProduct() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByProductWhereOpen();
+
+        List<OpportunityByProductDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunityByProductDTO opportunityByProductDTO = new OpportunityByProductDTO( objects[0].toString(), (Long) objects[1]);
+            result.add(opportunityByProductDTO);
+        }
+
+        return result;
+    }
+
 
 }

@@ -1,9 +1,6 @@
 package com.ironhack.accountservice.model;
+import com.ironhack.accountservice.enums.*;
 
-import com.ironhack.accountservice.controller.dtos.AccountDTO;
-import com.ironhack.accountservice.controller.dtos.ContactDTO;
-import com.ironhack.accountservice.enums.Product;
-import com.ironhack.accountservice.enums.Status;
 
 import javax.persistence.*;
 

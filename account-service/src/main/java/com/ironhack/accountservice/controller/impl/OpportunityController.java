@@ -1,18 +1,14 @@
 package com.ironhack.accountservice.controller.impl;
 
 import com.ironhack.accountservice.controller.dtos.*;
-import com.ironhack.accountservice.controller.dtos.report.OpportunityBySalesRepDTO;
-import com.ironhack.accountservice.controller.interfaces.IOpportunityController;
-import com.ironhack.accountservice.enums.Status;
-import com.ironhack.accountservice.model.*;
+import com.ironhack.accountservice.controller.dtos.report.*;
+import com.ironhack.accountservice.controller.interfaces.*;
 import com.ironhack.accountservice.service.interfaces.*;
 import org.springframework.beans.factory.annotation.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.*;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class OpportunityController implements IOpportunityController {
@@ -68,6 +64,30 @@ public class OpportunityController implements IOpportunityController {
     @ResponseStatus(HttpStatus.OK)
     public List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep() {
         return opportunityService.reportOpportunityOpenBySalesRep();
+    }
+
+    @GetMapping("/report/opportunity/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityByProduct() {
+        return opportunityService.reportOpportunityByProduct();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct() {
+        return opportunityService.reportOpportunityClosedWonByProduct();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct() {
+        return opportunityService.reportOpportunityClosedLostByProduct();
+    }
+
+    @GetMapping("/report/opportunity/open/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityOpenByProduct() {
+        return opportunityService.reportOpportunityOpenByProduct();
     }
 
     @GetMapping("/opportunity/max-quantity")
