@@ -1,7 +1,7 @@
 package com.ironhack.manageAllservice.service.interfaces;
 
 import com.ironhack.manageAllservice.controller.dtos.*;
-import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.*;
 
 import java.util.List;
 
@@ -70,4 +70,12 @@ public interface IManageAllService {
     double reportMeanQuantity();
 
     double reportMedianQuantity();
+
+    List<OpportunityByProductDTO> reportOpportunityByProduct();
+
+    List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct();
+
+    List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct();
+
+    List<OpportunityByProductDTO> reportOpportunityOpenByProduct();
 }

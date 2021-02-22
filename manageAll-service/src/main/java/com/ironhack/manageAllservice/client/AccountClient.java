@@ -4,7 +4,7 @@ import com.ironhack.manageAllservice.controller.dtos.AccountDTO;
 import com.ironhack.manageAllservice.controller.dtos.ContactDTO;
 import com.ironhack.manageAllservice.controller.dtos.OpportunityDTO;
 import com.ironhack.manageAllservice.controller.dtos.PurchaseDTO;
-import com.ironhack.manageAllservice.controller.dtos.report.OpportunityBySalesRepDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -55,6 +55,23 @@ public interface AccountClient {
 
     @GetMapping("/report/opportunity/open/by/salesrep")
     List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep();
+
+
+    @GetMapping("/report/opportunity/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityByProduct();
+
+    @GetMapping("/report/opportunity/closed-won/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct();
+
+    @GetMapping("/report/opportunity/closed-lost/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct();
+
+    @GetMapping("/report/opportunity/open/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityOpenByProduct();
 
     @GetMapping("/account/max-employee-count")
     public Integer getMaxEmployeeCount();

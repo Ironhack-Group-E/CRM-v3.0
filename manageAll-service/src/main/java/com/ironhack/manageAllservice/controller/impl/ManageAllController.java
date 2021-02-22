@@ -1,7 +1,7 @@
 package com.ironhack.manageAllservice.controller.impl;
 
 import com.ironhack.manageAllservice.controller.dtos.*;
-import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
+import com.ironhack.manageAllservice.controller.dtos.report.*;
 import com.ironhack.manageAllservice.controller.interfaces.IManageAllController;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -151,6 +151,34 @@ public class ManageAllController implements IManageAllController {
     public List<ReportDTO> reportOpportunityOpenBySalesRep() {
         return manageAllService.reportOpportunityOpenBySalesRep();
     }
+
+    //empieza by product
+
+    @GetMapping("/report/opportunity/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityByProduct() {
+        return manageAllService.reportOpportunityByProduct();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct() {
+        return manageAllService.reportOpportunityClosedWonByProduct();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct() {
+        return manageAllService.reportOpportunityClosedLostByProduct();
+    }
+
+    @GetMapping("/report/opportunity/open/by/product")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunityByProductDTO> reportOpportunityOpenByProduct() {
+        return manageAllService.reportOpportunityOpenByProduct();
+    }
+
+    //acaba by product
 
     @GetMapping("/report/max/employee-count")
     @ResponseStatus(HttpStatus.OK)
