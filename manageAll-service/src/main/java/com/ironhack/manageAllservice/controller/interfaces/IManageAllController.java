@@ -48,4 +48,30 @@ public interface IManageAllController {
     List<ReportDTO> reportOpportunityClosedLostBySalesRep();
 
     List<ReportDTO> reportOpportunityOpenBySalesRep();
+
+    Integer reportMaxEmployeeCount();
+
+    Integer reportMinEmployeeCount();
+
+    double reportMeanEmployeeCount();
+
+    double reportMedianEmployeeCount();
+
+    Integer reportMaxOpportunitiesPerAccount();
+
+    Integer reportMinOpportunitiesPerAccount();
+
+    double reportMeanOpportunitiesPerAccount();
+
+    double reportMedianOpportunitiesPerAccount();
+
+    Integer reportMaxQuantity();
+
+    Integer reportMinQuantity();
+
+    double reportMeanQuantity();
+
+    double reportMedianQuantity();
+
+
 }

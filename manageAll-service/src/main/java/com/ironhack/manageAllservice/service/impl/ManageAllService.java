@@ -291,6 +291,90 @@ public class ManageAllService implements IManageAllService {
         return resultWithNames;
     }
 
+    public Integer reportMaxEmployeeCount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer maxEmployeeCount = circuitBreaker.run(() -> accountClient.getMaxEmployeeCount(),
+                throwable -> getMaxEmployeeCountFallback());
+        return maxEmployeeCount;
+    }
+
+    public Integer reportMinEmployeeCount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer minEmployeeCount = circuitBreaker.run(() -> accountClient.getMinEmployeeCount(),
+                throwable -> getMinEmployeeCountFallback());
+        return minEmployeeCount;
+    }
+
+    public double reportMeanEmployeeCount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        double meanEmployeeCount = circuitBreaker.run(() -> accountClient.getMeanEmployeeCount(),
+                throwable -> getMeanEmployeeCountFallback());
+        return meanEmployeeCount;
+    }
+
+    public double reportMedianEmployeeCount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        double medianEmployeeCount = circuitBreaker.run(() -> accountClient.getMedianEmployeeCount(),
+                throwable -> getMedianEmployeeCountFallback());
+        return medianEmployeeCount;
+    }
+
+    public Integer reportMaxOpportunitiesPerAccount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer maxOppos = circuitBreaker.run(() -> accountClient.getMaxOpportunitiesPerAccount(),
+                throwable -> getMaxOpportunitiesPerAccountFallback());
+        return maxOppos;
+    }
+
+    public Integer reportMinOpportunitiesPerAccount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer minOppos = circuitBreaker.run(() -> accountClient.getMinOpportunitiesPerAccount(),
+                throwable -> getMinOpportunitiesPerAccountFallback());
+        return minOppos;
+    }
+
+    public double reportMeanOpportunitiesPerAccount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        double meanOppos = circuitBreaker.run(() -> accountClient.getMeanOpportunitiesPerAccount(),
+                throwable -> getMeanOpportunitiesPerAccountFallback());
+        return meanOppos;
+    }
+
+    public double reportMedianOpportunitiesPerAccount() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        double medianOppos = circuitBreaker.run(() -> accountClient.getMedianOpportunitiesPerAccount(),
+                throwable -> getMedianOpportunitiesPerAccountFallback());
+        return medianOppos;
+    }
+
+    public Integer reportMaxQuantity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer maxQuantity = circuitBreaker.run(() -> accountClient.getMaxQuantity(),
+                throwable -> getMaxQuantityFallback());
+        return maxQuantity;
+    }
+
+    public Integer reportMinQuantity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        Integer minQuantity = circuitBreaker.run(() -> accountClient.getMinQuantity(),
+                throwable -> getMinQuantityFallback());
+        return minQuantity;
+    }
+
+    public double reportMeanQuantity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        double meanQuantity = circuitBreaker.run(() -> accountClient.getMeanQuantity(),
+                throwable -> getMeanQuantityFallback());
+        return meanQuantity;
+    }
+
+    public double reportMedianQuantity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        double medianQuantity = circuitBreaker.run(() -> accountClient.getMedianQuantity(),
+                throwable -> getMedianQuantityFallback());
+        return medianQuantity;
+    }
+
     /* --------------------------------- UTILITY METHODS ----------------------------*/
 
 
@@ -379,6 +463,54 @@ public class ManageAllService implements IManageAllService {
     private LeadDTO deleteLeadFallback() {
         throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
 
+    }
+
+    private Integer getMaxEmployeeCountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private Integer getMinEmployeeCountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private double getMeanEmployeeCountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private double getMedianEmployeeCountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private Integer getMaxOpportunitiesPerAccountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private Integer getMinOpportunitiesPerAccountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private double getMeanOpportunitiesPerAccountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private double getMedianOpportunitiesPerAccountFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private Integer getMaxQuantityFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private Integer getMinQuantityFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private double getMeanQuantityFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private double getMedianQuantityFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 
 }

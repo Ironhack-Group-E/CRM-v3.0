@@ -55,4 +55,40 @@ public interface AccountClient {
 
     @GetMapping("/report/opportunity/open/by/salesrep")
     List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep();
+
+    @GetMapping("/account/max-employee-count")
+    public Integer getMaxEmployeeCount();
+
+    @GetMapping("/account/min-employee-count")
+    public Integer getMinEmployeeCount();
+
+    @GetMapping("/account/mean-employee-count")
+    public double getMeanEmployeeCount();
+
+    @GetMapping("/account/median-employee-count")
+    public double getMedianEmployeeCount();
+
+    @GetMapping("/account/max-oppos")
+    public Integer getMaxOpportunitiesPerAccount();
+
+    @GetMapping("/account/min-oppos")
+    public Integer getMinOpportunitiesPerAccount();
+
+    @GetMapping("/account/mean-oppos")
+    public double getMeanOpportunitiesPerAccount();
+
+    @GetMapping("/account/median-oppos")
+    public double getMedianOpportunitiesPerAccount();
+
+    @GetMapping("/opportunity/max-quantity")
+    public Integer getMaxQuantity();
+
+    @GetMapping("/opportunity/min-quantity")
+    public Integer getMinQuantity();
+
+    @GetMapping("/opportunity/mean-quantity")
+    public double getMeanQuantity();
+
+    @GetMapping("/opportunity/median-quantity")
+    public double getMedianQuantity();
 }

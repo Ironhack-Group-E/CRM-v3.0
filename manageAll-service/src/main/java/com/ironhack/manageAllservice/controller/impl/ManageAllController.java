@@ -151,4 +151,77 @@ public class ManageAllController implements IManageAllController {
     public List<ReportDTO> reportOpportunityOpenBySalesRep() {
         return manageAllService.reportOpportunityOpenBySalesRep();
     }
+
+    @GetMapping("/report/max/employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer reportMaxEmployeeCount() {
+        return manageAllService.reportMaxEmployeeCount();
+    }
+
+    @GetMapping("/report/min/employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer reportMinEmployeeCount() {
+        return manageAllService.reportMinEmployeeCount();
+    }
+
+    @GetMapping("/report/mean/employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public double reportMeanEmployeeCount() {
+        return manageAllService.reportMeanEmployeeCount();
+    }
+
+    @GetMapping("/report/median/employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public double reportMedianEmployeeCount() {
+        return manageAllService.reportMedianEmployeeCount();
+    }
+
+    @GetMapping("/report/max/opportunities/per/account")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer reportMaxOpportunitiesPerAccount() {
+        return manageAllService.reportMaxOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/report/min/opportunities/per/account")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer reportMinOpportunitiesPerAccount() {
+        return manageAllService.reportMinOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/report/mean/opportunities/per/account")
+    @ResponseStatus(HttpStatus.OK)
+    public double reportMeanOpportunitiesPerAccount() {
+        return manageAllService.reportMeanOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/report/median/opportunities/per/account")
+    @ResponseStatus(HttpStatus.OK)
+    public double reportMedianOpportunitiesPerAccount() {
+        return manageAllService.reportMedianOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/report/max/quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer reportMaxQuantity() {
+        return manageAllService.reportMaxQuantity();
+    }
+
+    @GetMapping("/report/min/quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer reportMinQuantity() {
+        return manageAllService.reportMinQuantity();
+    }
+
+    @GetMapping("/report/mean/quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public double reportMeanQuantity() {
+        return manageAllService.reportMeanQuantity();
+    }
+
+    @GetMapping("/report/median/quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public double reportMedianQuantity() {
+        return manageAllService.reportMedianQuantity();
+    }
+
 }
