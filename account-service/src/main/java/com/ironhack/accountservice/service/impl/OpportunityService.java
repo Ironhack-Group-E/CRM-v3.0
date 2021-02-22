@@ -227,7 +227,7 @@ public class OpportunityService implements IOpportunityService {
 
 
     public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct() {
-        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon();
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByProductWhereClosedWon();
 
         List<OpportunityByProductDTO> result = new ArrayList<>();
         for (Object[] objects : report) {

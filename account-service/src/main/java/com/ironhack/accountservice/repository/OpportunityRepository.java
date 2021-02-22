@@ -35,22 +35,19 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
     List<Object[]> countOfOpportunitiesBySalesRepsWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Product
-    @Query(value = "SELECT product, COUNT(*) FROM Opportunity GROUP BY product")
+    @Query("SELECT product, COUNT(*) FROM Opportunity GROUP BY product")
     List<Object[]> countOfOpportunitiesByProduct();
 
     //Returns a list of products and count of all Opportunities by Product where status is CLOSED_WON
-    @Query(value = "SELECT product, COUNT(*) FROM Opportunity " +
-            "WHERE status = CLOSED_WON GROUP BY product")
+    @Query("SELECT product, COUNT(*) FROM Opportunity o WHERE o.status = 'CLOSED_WON' GROUP BY product")
     List<Object[]> countOfOpportunitiesByProductWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by Product where status is CLOSED_LOST
-    @Query(value = "SELECT product, COUNT(*) FROM Opportunity " +
-            "WHERE status = CLOSED_LOST GROUP BY product")
+    @Query("SELECT product, COUNT(*) FROM Opportunity o WHERE o.status = 'CLOSED_LOST' GROUP BY product")
     List<Object[]> countOfOpportunitiesByProductWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by Product where status is OPEN
-    @Query(value = "SELECT product, COUNT(*) FROM Opportunity " +
-            "WHERE status = OPEN GROUP BY product")
+    @Query("SELECT product, COUNT(*) FROM Opportunity o WHERE o.status = 'OPEN' GROUP BY product")
     List<Object[]> countOfOpportunitiesByProductWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Country
