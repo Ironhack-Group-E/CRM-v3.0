@@ -134,11 +134,7 @@ public class OpportunityService implements IOpportunityService {
 
         List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepId();
 
-        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
-        for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
-            result.add(opportunityBySalesRepDTO);
-        }
+        List<OpportunityBySalesRepDTO> result = getOpportunityBySalesRepDTOS(report);
 
         return result;
     }
@@ -148,11 +144,7 @@ public class OpportunityService implements IOpportunityService {
 
         List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepsWhereClosedWon();
 
-        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
-        for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
-            result.add(opportunityBySalesRepDTO);
-        }
+        List<OpportunityBySalesRepDTO> result = getOpportunityBySalesRepDTOS(report);
 
         return result;
     }
@@ -161,11 +153,7 @@ public class OpportunityService implements IOpportunityService {
 
         List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepsWhereClosedLost();
 
-        List<OpportunityBySalesRepDTO> result = new ArrayList<>();
-        for (Object[] objects : report) {
-            OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
-            result.add(opportunityBySalesRepDTO);
-        }
+        List<OpportunityBySalesRepDTO> result = getOpportunityBySalesRepDTOS(report);
 
         return result;
     }
@@ -174,12 +162,17 @@ public class OpportunityService implements IOpportunityService {
 
         List<Object[]> report = opportunityRepository.countOfOpportunitiesBySalesRepsWhereOpen();
 
+        List<OpportunityBySalesRepDTO> result = getOpportunityBySalesRepDTOS(report);
+
+        return result;
+    }
+
+    private List<OpportunityBySalesRepDTO> getOpportunityBySalesRepDTOS(List<Object[]> report) {
         List<OpportunityBySalesRepDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
             OpportunityBySalesRepDTO opportunityBySalesRepDTO = new OpportunityBySalesRepDTO((Integer) objects[0], (Long) objects[1]);
             result.add(opportunityBySalesRepDTO);
         }
-
         return result;
     }
 
