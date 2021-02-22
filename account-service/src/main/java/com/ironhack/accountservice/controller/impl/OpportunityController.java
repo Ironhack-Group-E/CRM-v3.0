@@ -69,4 +69,28 @@ public class OpportunityController implements IOpportunityController {
     public List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep() {
         return opportunityService.reportOpportunityOpenBySalesRep();
     }
+
+    @GetMapping("/opportunity/max-quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer getMaxQuantity() {
+        return opportunityService.getMaxQuantity();
+    }
+
+    @GetMapping("/opportunity/min-quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer getMinQuantity() {
+        return opportunityService.getMinQuantity();
+    }
+
+    @GetMapping("/opportunity/mean-quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public double getMeanQuantity() {
+        return opportunityService.getAverageQuantity();
+    }
+
+    @GetMapping("/opportunity/median-quantity")
+    @ResponseStatus(HttpStatus.OK)
+    public double getMedianQuantity() {
+        return opportunityService.getMedianQuantity();
+    }
 }

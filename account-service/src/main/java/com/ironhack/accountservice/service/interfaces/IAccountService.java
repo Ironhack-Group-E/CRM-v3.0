@@ -11,4 +11,20 @@ public interface IAccountService {
     AccountDTO getAccount(Integer id);
 
     AccountDTO postAccount(AccountDTO accountDTO);
+
+    Integer getMaxEmployeeCount();
+
+    Integer getMinEmployeeCount();
+
+    double getAverageEmployeeCount();
+
+    double getMedianEmployeeCount();
+
+    Integer getMaxOpportunitiesPerAccount();
+
+    Integer getMinOpportunitiesPerAccount();
+
+    double getAvgOpportunitiesPerAccount();
+
+    double getMedianOpportunitiesPerAccount();
 }

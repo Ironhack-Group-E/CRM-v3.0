@@ -183,4 +183,32 @@ public class OpportunityService implements IOpportunityService {
     }
 
 
+    public Integer getMaxQuantity() {
+        Integer maxQuantity = opportunityRepository.maxOfQuantity();
+        if (maxQuantity == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no trucks ordered");
+        } else return maxQuantity;
+    }
+
+    public Integer getMinQuantity() {
+        Integer minQuantity = opportunityRepository.minOfQuantity();
+        if (minQuantity == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no trucks ordered");
+        } else return minQuantity;
+    }
+
+    public double getAverageQuantity() {
+        double avgQuantity = opportunityRepository.meanOfQuantity();
+        if (avgQuantity == 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no trucks ordered");
+        } else return avgQuantity;
+    }
+
+    public double getMedianQuantity() {
+        double medianQuantity = opportunityRepository.medianOfQuantity();
+        if (medianQuantity == 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no trucks ordered");
+        } else return medianQuantity;
+    }
+
 }

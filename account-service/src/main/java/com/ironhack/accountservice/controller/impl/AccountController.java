@@ -33,4 +33,52 @@ public class AccountController implements IAccountController {
     public AccountDTO postAccount(@RequestBody @Valid AccountDTO accountDTO) {
         return accountService.postAccount(accountDTO);
     }
+
+    @GetMapping("/account/max-employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer getMaxEmployeeCount() {
+        return accountService.getMaxEmployeeCount();
+    }
+
+    @GetMapping("/account/min-employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer getMinEmployeeCount() {
+        return accountService.getMinEmployeeCount();
+    }
+
+    @GetMapping("/account/mean-employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public double getMeanEmployeeCount() {
+        return accountService.getAverageEmployeeCount();
+    }
+
+    @GetMapping("/account/median-employee-count")
+    @ResponseStatus(HttpStatus.OK)
+    public double getMedianEmployeeCount() {
+        return accountService.getMedianEmployeeCount();
+    }
+
+    @GetMapping("/account/max-oppos")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer getMaxOpportunitiesPerAccount() {
+        return accountService.getMaxOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/account/min-oppos")
+    @ResponseStatus(HttpStatus.OK)
+    public Integer getMinOpportunitiesPerAccount() {
+        return accountService.getMinOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/account/mean-oppos")
+    @ResponseStatus(HttpStatus.OK)
+    public double getMeanOpportunitiesPerAccount() {
+        return accountService.getAvgOpportunitiesPerAccount();
+    }
+
+    @GetMapping("/account/median-oppos")
+    @ResponseStatus(HttpStatus.OK)
+    public double getMedianOpportunitiesPerAccount() {
+        return accountService.getMedianOpportunitiesPerAccount();
+    }
 }

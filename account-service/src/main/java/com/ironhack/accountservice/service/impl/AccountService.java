@@ -62,4 +62,60 @@ public class AccountService implements IAccountService {
         }
         return accountDTOList;
     }
+
+    public Integer getMaxEmployeeCount() {
+        Integer maxEmployeeCount = accountRepository.maxOfEmployeeCount();
+        if (maxEmployeeCount == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return maxEmployeeCount;
+    }
+
+    public Integer getMinEmployeeCount() {
+        Integer minEmployeeCount = accountRepository.minOfEmployeeCount();
+        if (minEmployeeCount == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return minEmployeeCount;
+    }
+
+    public double getAverageEmployeeCount() {
+        double avgEmployeeCount = accountRepository.meanOfEmployeeCount();
+        if (avgEmployeeCount == 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return avgEmployeeCount;
+    }
+
+    public double getMedianEmployeeCount() {
+        double medianEmployeeCount = accountRepository.medianOfEmployeeCount();
+        if (medianEmployeeCount == 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return medianEmployeeCount;
+    }
+
+    public Integer getMaxOpportunitiesPerAccount() {
+        Integer maxOppos = accountRepository.maxOfOpportunitiesOnAccounts();
+        if (maxOppos == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return maxOppos;
+    }
+
+    public Integer getMinOpportunitiesPerAccount() {
+        Integer minOppos = accountRepository.minOfOpportunitiesOnAccounts();
+        if (minOppos == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return minOppos;
+    }
+
+    public double getAvgOpportunitiesPerAccount() {
+        double avgOppos = accountRepository.meanOfOpportunitiesOnAccounts();
+        if (avgOppos == 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return avgOppos;
+    }
+
+    public double getMedianOpportunitiesPerAccount() {
+        double medianOppos = accountRepository.medianOfOpportunitiesOnAccounts();
+        if (medianOppos == 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "There are no accounts created");
+        } else return medianOppos;
+    }
 }

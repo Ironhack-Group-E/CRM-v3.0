@@ -25,4 +25,12 @@ public interface IOpportunityController {
      List<OpportunityBySalesRepDTO> reportOpportunityClosedLostBySalesRep();
 
      List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep();
+
+     Integer getMaxQuantity();
+
+     Integer getMinQuantity();
+
+     double getMeanQuantity();
+
+     double getMedianQuantity();
 }
