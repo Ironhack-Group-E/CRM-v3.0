@@ -1,21 +1,26 @@
 package com.ironhack.manageAllservice.controller.dtos;
 
 import com.ironhack.manageAllservice.enums.Industry;
+import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class AccountDTO {
 
     private Integer id;
     //@NotEmpty
+    @Length(max = 60)
     private String companyName;
     private Industry industry;
     @Min(0)
     private int employeeCount;
     @NotEmpty
+    @Pattern(regexp = "^[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+(\\s+[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+)*${1,31}")
     private String city;
     @NotEmpty
+    @Pattern(regexp = "^[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+(\\s+[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+)*${1,31}")
     private String country;
 
     public AccountDTO() {

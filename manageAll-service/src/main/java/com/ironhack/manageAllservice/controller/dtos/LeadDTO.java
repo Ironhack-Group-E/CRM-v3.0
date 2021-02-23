@@ -1,19 +1,25 @@
 package com.ironhack.manageAllservice.controller.dtos;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class LeadDTO {
     private Integer id;
     @NotEmpty
+    @Pattern(regexp = "^[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+(\\s+[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+)*${1,31}")
     private String name;
     @NotEmpty
     @Email
     private String email;
     @NotEmpty
+    @Length(max = 60)
     private String companyName;
     @NotEmpty
+    @Pattern(regexp = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$")
     private String phoneNumber;
     @Min(1)
     private Integer salesRepId;

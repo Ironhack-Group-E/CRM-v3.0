@@ -1,10 +1,12 @@
 package com.ironhack.manageAllservice.controller.dtos;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 
 public class SalesRepDTO {
     private Integer id;
     @NotEmpty
+    @Pattern(regexp = "^[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+(\\s+[ÁÉÍÓÚA-ZÑ]?[a-záéíóúñ]+)*${1,31}")
     private String name;
 
     /*@OneToMany(mappedBy = "salesRep")
