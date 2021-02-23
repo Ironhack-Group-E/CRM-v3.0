@@ -9,20 +9,14 @@ import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
 import com.ironhack.manageAllservice.service.exceptions.SalesRepNotFoundException;
 import com.ironhack.manageAllservice.controller.dtos.report.*;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
-import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
-import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
-import io.github.resilience4j.timelimiter.TimeLimiterConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.circuitbreaker.resilience4j.Resilience4JCircuitBreakerFactory;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
-import org.springframework.cloud.client.circuitbreaker.Customizer;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,8 +33,7 @@ public class ManageAllService implements IManageAllService {
     @Autowired
     private AccountClient accountClient;
 
-    @Autowired
-    private CircuitBreakerFactory circuitBreakerFactory;
+    private CircuitBreakerFactory circuitBreakerFactory = new Resilience4JCircuitBreakerFactory();
 
 
     /* ---------------------------------- SALES REP SERVICE-------------------------------------*/
@@ -68,6 +61,7 @@ public class ManageAllService implements IManageAllService {
     }
 
     public SalesRepDTO getSalesRepById(Integer id) {
+
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("salesRep-service");
 
         SalesRepDTO salesRepDTO = circuitBreaker.run(()->salesRepClient.getSalesRep(id),

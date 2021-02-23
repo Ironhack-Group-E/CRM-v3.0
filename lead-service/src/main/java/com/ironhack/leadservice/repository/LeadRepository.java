@@ -10,9 +10,9 @@ import java.util.List;
 @Repository
 public interface LeadRepository extends JpaRepository<Lead, Integer> {
 
-//    //  Returns a list of names and count of all Leads by SalesRep
-//    @Query(value = "SELECT s.name, COUNT(*) FROM Lead l JOIN FETCH SalesRep s ON l.salesRep = s.id GROUP BY s.name")
-//    List<Object[]> countOfLeadsBySalesReps();
+    //  Returns a list of names and count of all Leads by SalesRep
+    @Query(value = "SELECT salesRepId, COUNT(*) FROM Lead GROUP BY salesRepId")
+    List<Object[]> countOfLeadsBySalesReps();
 
 
     /**
