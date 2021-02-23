@@ -39,4 +39,12 @@ public interface IOpportunityService {
     List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct();
 
     List<OpportunityByProductDTO> reportOpportunityOpenByProduct();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityByCountry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityClosedWonByCountry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry();
 }

@@ -220,7 +220,7 @@ public class OpportunityService implements IOpportunityService {
 
 
     public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct() {
-        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon();
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByProductWhereClosedWon();
 
         List<OpportunityByProductDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
@@ -250,8 +250,60 @@ public class OpportunityService implements IOpportunityService {
 
         List<OpportunityByProductDTO> result = new ArrayList<>();
         for (Object[] objects : report) {
-            OpportunityByProductDTO opportunityByProductDTO = new OpportunityByProductDTO( objects[0].toString(), (Long) objects[1]);
+            OpportunityByProductDTO opportunityByProductDTO = new OpportunityByProductDTO(objects[0].toString(), (Long) objects[1]);
             result.add(opportunityByProductDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityByCountry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCountry();
+
+        List<OpportunitiesByCountryDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunitiesByCountryDTO opportunityByCountryDTO = new OpportunitiesByCountryDTO( (String) objects[0], (Long) objects[1]);
+            result.add(opportunityByCountryDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedWonByCountry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCountryWhereClosedWon();
+
+        List<OpportunitiesByCountryDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunitiesByCountryDTO opportunityByCountryDTO = new OpportunitiesByCountryDTO( (String) objects[0], (Long) objects[1]);
+            result.add(opportunityByCountryDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCountryWhereClosedLost();
+
+        List<OpportunitiesByCountryDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunitiesByCountryDTO opportunityByCountryDTO = new OpportunitiesByCountryDTO( (String) objects[0], (Long) objects[1]);
+            result.add(opportunityByCountryDTO);
+        }
+
+        return result;
+    }
+
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCountryWhereOpen();
+
+        List<OpportunitiesByCountryDTO> result = new ArrayList<>();
+        for (Object[] objects : report) {
+            OpportunitiesByCountryDTO opportunityByCountryDTO = new OpportunitiesByCountryDTO( (String) objects[0], (Long) objects[1]);
+            result.add(opportunityByCountryDTO);
         }
 
         return result;

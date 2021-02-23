@@ -7,6 +7,7 @@ import com.ironhack.manageAllservice.controller.dtos.*;
 import com.ironhack.manageAllservice.controller.dtos.report.OpportunityBySalesRepDTO;
 import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
 import com.ironhack.manageAllservice.service.exceptions.SalesRepNotFoundException;
+import com.ironhack.manageAllservice.controller.dtos.report.*;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
@@ -299,6 +300,35 @@ public class ManageAllService implements IManageAllService {
 
         return resultWithNames;
     }
+
+    public List<OpportunityByProductDTO> reportOpportunityByProduct() {
+
+        List<OpportunityByProductDTO> result = accountClient.reportOpportunityByProduct();
+
+        return result;
+    }
+
+    public List<OpportunityByProductDTO> reportOpportunityClosedWonByProduct() {
+
+        List<OpportunityByProductDTO> result = accountClient.reportOpportunityClosedWonByProduct();
+
+        return result;
+    }
+
+    public List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct() {
+
+        List<OpportunityByProductDTO> result = accountClient.reportOpportunityClosedLostByProduct();
+
+        return result;
+    }
+
+    public List<OpportunityByProductDTO> reportOpportunityOpenByProduct() {
+
+        List<OpportunityByProductDTO> result = accountClient.reportOpportunityOpenByProduct();
+
+        return result;
+    }
+
 
     public Integer reportMaxEmployeeCount() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
