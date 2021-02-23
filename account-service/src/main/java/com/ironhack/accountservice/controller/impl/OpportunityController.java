@@ -90,6 +90,34 @@ public class OpportunityController implements IOpportunityController {
         return opportunityService.reportOpportunityOpenByProduct();
     }
 
+    //empieza country
+
+    @GetMapping("/report/opportunity/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityByCountry() {
+        return opportunityService.reportOpportunityByCountry();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedWonByCountry() {
+        return opportunityService.reportOpportunityClosedWonByCountry();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry() {
+        return opportunityService.reportOpportunityClosedLostByCountry();
+    }
+
+    @GetMapping("/report/opportunity/open/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry() {
+        return opportunityService.reportOpportunityOpenByCountry();
+    }
+
+    //acaba country
+
     @GetMapping("/opportunity/max-quantity")
     @ResponseStatus(HttpStatus.OK)
     public Integer getMaxQuantity() {
