@@ -1,4 +1,4 @@
-package com.ironhack.accountservice.controller.dtos.report;
+package com.ironhack.manageAllservice.controller.dtos.report;
 
 public class OpportunitiesByCountryDTO {
     private String country;

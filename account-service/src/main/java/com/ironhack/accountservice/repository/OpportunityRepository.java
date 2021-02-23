@@ -70,43 +70,43 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
     List<Object[]> countOfOpportunitiesByCountryWhereOpen();
 
     //Returns a list of products and count of all Opportunities by City
-    @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
+    @Query("SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
             "GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCity();
 
     //Returns a list of products and count of all Opportunities by City where status is CLOSED_WON
     @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = CLOSED_WON GROUP BY a.city")
+            "WHERE o.status = 'CLOSED_WON' GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCityWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by City where status is CLOSED_LOST
     @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = CLOSED_LOST GROUP BY a.city")
+            "WHERE o.status = 'CLOSED_LOST' GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCityWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by City where status is OPEN
-    @Query(value = "SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = OPEN GROUP BY a.city")
+    @Query("SELECT a.city, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
+            "WHERE o.status = 'OPEN' GROUP BY a.city")
     List<Object[]> countOfOpportunitiesByCityWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Industry
-    @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
+    @Query("SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
             "GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustry();
 
     //Returns a list of products and count of all Opportunities by Industry where status is CLOSED_WON
-    @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = CLOSED_WON GROUP BY a.industry")
+    @Query("SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
+            "WHERE o.status = 'CLOSED_WON' GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustryWhereClosedWon();
 
     //Returns a list of products and count of all Opportunities by Industry where status is CLOSED_LOST
-    @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = CLOSED_LOST GROUP BY a.industry")
+    @Query("SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
+            "WHERE o.status = 'CLOSED_LOST' GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustryWhereClosedLost();
 
     //Returns a list of products and count of all Opportunities by Industry where status is OPEN
-    @Query(value = "SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
-            "WHERE o.status = OPEN GROUP BY a.industry")
+    @Query("SELECT a.industry, COUNT(*) FROM Account a JOIN FETCH Opportunity o ON a.id = o.account " +
+            "WHERE o.status = 'OPEN' GROUP BY a.industry")
     List<Object[]> countOfOpportunitiesByIndustryWhereOpen();
 
 

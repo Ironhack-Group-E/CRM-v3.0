@@ -309,5 +309,85 @@ public class OpportunityService implements IOpportunityService {
         return result;
     }
 
+    public List<OpportunitiesByCityDTO> reportOpportunityByCity() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCity();
+        List<OpportunitiesByCityDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByCityDTO opportunitiesByCityDTO = new OpportunitiesByCityDTO((String) objects[0], (Long) objects[1]);
+            result.add(opportunitiesByCityDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedWonByCity() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCityWhereClosedWon();
+        List<OpportunitiesByCityDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByCityDTO opportunitiesByCityDTO = new OpportunitiesByCityDTO((String) objects[0], (Long) objects[1]);
+            result.add(opportunitiesByCityDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedLostByCity() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCityWhereClosedLost();
+        List<OpportunitiesByCityDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByCityDTO opportunitiesByCityDTO = new OpportunitiesByCityDTO((String) objects[0], (Long) objects[1]);
+            result.add(opportunitiesByCityDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByCityDTO> reportOpportunityOpenByCity() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByCityWhereOpen();
+        List<OpportunitiesByCityDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByCityDTO opportunitiesByCityDTO = new OpportunitiesByCityDTO((String) objects[0], (Long) objects[1]);
+            result.add(opportunitiesByCityDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustry();
+        List<OpportunitiesByIndustryDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByIndustryDTO opportunitiesByIndustryDTO = new OpportunitiesByIndustryDTO(objects[0].toString(), (Long) objects[1]);
+            result.add(opportunitiesByIndustryDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedLostByIndustry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedLost();
+        List<OpportunitiesByIndustryDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByIndustryDTO opportunitiesByIndustryDTO = new OpportunitiesByIndustryDTO(objects[0].toString(), (Long) objects[1]);
+            result.add(opportunitiesByIndustryDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedWonByIndustry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustryWhereClosedWon();
+        List<OpportunitiesByIndustryDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByIndustryDTO opportunitiesByIndustryDTO = new OpportunitiesByIndustryDTO(objects[0].toString(), (Long) objects[1]);
+            result.add(opportunitiesByIndustryDTO);
+        }
+        return result;
+    }
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityOpenByIndustry() {
+        List<Object[]> report = opportunityRepository.countOfOpportunitiesByIndustryWhereOpen();
+        List<OpportunitiesByIndustryDTO> result = new ArrayList<>();
+        for(Object[] objects:report) {
+            OpportunitiesByIndustryDTO opportunitiesByIndustryDTO = new OpportunitiesByIndustryDTO(objects[0].toString(), (Long) objects[1]);
+            result.add(opportunitiesByIndustryDTO);
+        }
+        return result;
+    }
+
 
 }

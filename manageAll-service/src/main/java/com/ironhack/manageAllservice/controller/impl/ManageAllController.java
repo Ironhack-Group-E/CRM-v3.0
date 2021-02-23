@@ -121,6 +121,7 @@ public class ManageAllController implements IManageAllController {
 
 
     /* -------------------------------------- REPORTS CONTROLLER -----------------------------------------*/
+    /* ----------------------------------------- BY SALES REP---------------------------------------------*/
 
     @GetMapping("/report/lead/by/salesrep")
     @ResponseStatus(HttpStatus.OK)
@@ -152,7 +153,7 @@ public class ManageAllController implements IManageAllController {
         return manageAllService.reportOpportunityOpenBySalesRep();
     }
 
-    //empieza by product
+    /* ----------------------------------------- BY PRODUCT---------------------------------------------*/
 
     @GetMapping("/report/opportunity/by/product")
     @ResponseStatus(HttpStatus.OK)
@@ -178,7 +179,86 @@ public class ManageAllController implements IManageAllController {
         return manageAllService.reportOpportunityOpenByProduct();
     }
 
-    //acaba by product
+    /* ----------------------------------------- BY COUNTRY ---------------------------------------------*/
+
+    @GetMapping("/report/opportunity/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityByCountry() {
+        return manageAllService.reportOpportunityByCountry();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedWonByCountry() {
+        return manageAllService.reportOpportunityClosedWonByCountry();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry() {
+        return manageAllService.reportOpportunityClosedLostByCountry();
+    }
+
+    @GetMapping("/report/opportunity/open/by/country")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry() {
+        return manageAllService.reportOpportunityOpenByCountry();
+    }
+
+    /* ----------------------------------------- BY CITY  -----------------------------------------------*/
+    @GetMapping("/report/opportunity/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityByCity(){
+        return manageAllService.reportOpportunityByCity();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedWonByCity(){
+        return manageAllService.reportOpportunityClosedWonByCity();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedLostByCity(){
+        return manageAllService.reportOpportunityClosedLostByCity();
+    }
+
+    @GetMapping("/report/opportunity/open/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityOpenByCity(){
+        return manageAllService.reportOpportunityOpenByCity();
+    }
+
+
+    /* ----------------------------------------- BY INDUSTRY---------------------------------------------*/
+
+    @GetMapping("/report/opportunity/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry(){
+        return manageAllService.reportOpportunityByIndustry();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedWonByIndustry(){
+        return manageAllService.reportOpportunityClosedWonByIndustry();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedLostByIndustry(){
+        return manageAllService.reportOpportunityClosedLostByIndustry();
+    }
+
+    @GetMapping("/report/opportunity/open/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityOpenByIndustry(){
+        return manageAllService.reportOpportunityOpenByIndustry();
+    }
+
+
+    /* -------------------------------------- EMPLOYEE STATS---------------------------------------------*/
 
     @GetMapping("/report/max/employee-count")
     @ResponseStatus(HttpStatus.OK)
@@ -204,6 +284,9 @@ public class ManageAllController implements IManageAllController {
         return manageAllService.reportMedianEmployeeCount();
     }
 
+    /* ------------------------------ OPPORTUNITES PER ACCOUNT STATS--------------------------------------*/
+
+
     @GetMapping("/report/max/opportunities/per/account")
     @ResponseStatus(HttpStatus.OK)
     public Integer reportMaxOpportunitiesPerAccount() {
@@ -227,6 +310,8 @@ public class ManageAllController implements IManageAllController {
     public double reportMedianOpportunitiesPerAccount() {
         return manageAllService.reportMedianOpportunitiesPerAccount();
     }
+
+    /* ------------------------------ QUANTITY STATS--------------------------------------*/
 
     @GetMapping("/report/max/quantity")
     @ResponseStatus(HttpStatus.OK)

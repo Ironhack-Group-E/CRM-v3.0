@@ -78,4 +78,28 @@ public interface IManageAllService {
     List<OpportunityByProductDTO> reportOpportunityClosedLostByProduct();
 
     List<OpportunityByProductDTO> reportOpportunityOpenByProduct();
+
+    List<OpportunitiesByCityDTO> reportOpportunityByCity();
+
+    List<OpportunitiesByCityDTO> reportOpportunityClosedWonByCity();
+
+    List<OpportunitiesByCityDTO> reportOpportunityClosedLostByCity();
+
+    List<OpportunitiesByCityDTO> reportOpportunityOpenByCity();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityClosedWonByIndustry();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityClosedLostByIndustry();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityOpenByIndustry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityByCountry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityClosedWonByCountry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry();
+
+    List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry();
 }

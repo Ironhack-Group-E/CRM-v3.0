@@ -16,6 +16,8 @@ public class OpportunityController implements IOpportunityController {
     @Autowired
     IOpportunityService opportunityService;
 
+    /*-----------------------------------GENERAL ---------------------------------------- */
+
     @GetMapping("/opportunity/{id}")
     @ResponseStatus(HttpStatus.OK)
     public OpportunityDTO getOpportunity(@PathVariable Integer id) {
@@ -42,6 +44,10 @@ public class OpportunityController implements IOpportunityController {
         return opportunityService.closeOpportunity(id, status);
     }
 
+
+    /*-----------------------------------REPORT BY SALESREP---------------------------------------- */
+
+
     @GetMapping("/report/opportunity/by/salesrep")
     @ResponseStatus(HttpStatus.OK)
     public List<OpportunityBySalesRepDTO> reportOpportunityBySalesRep() {
@@ -65,6 +71,9 @@ public class OpportunityController implements IOpportunityController {
     public List<OpportunityBySalesRepDTO> reportOpportunityOpenBySalesRep() {
         return opportunityService.reportOpportunityOpenBySalesRep();
     }
+
+    /*-----------------------------------REPORT BY PRODUCT---------------------------------------- */
+
 
     @GetMapping("/report/opportunity/by/product")
     @ResponseStatus(HttpStatus.OK)
@@ -90,7 +99,7 @@ public class OpportunityController implements IOpportunityController {
         return opportunityService.reportOpportunityOpenByProduct();
     }
 
-    //empieza country
+    /*-----------------------------------REPORT BY COUNTRY---------------------------------------- */
 
     @GetMapping("/report/opportunity/by/country")
     @ResponseStatus(HttpStatus.OK)
@@ -116,7 +125,60 @@ public class OpportunityController implements IOpportunityController {
         return opportunityService.reportOpportunityOpenByCountry();
     }
 
-    //acaba country
+    /*-----------------------------------REPORT BY CITY---------------------------------------- */
+
+    @GetMapping("/report/opportunity/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityByCity(){
+        return opportunityService.reportOpportunityByCity();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedWonByCity(){
+        return opportunityService.reportOpportunityClosedWonByCity();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedLostByCity(){
+        return opportunityService.reportOpportunityClosedLostByCity();
+    }
+
+    @GetMapping("/report/opportunity/open/by/city")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByCityDTO> reportOpportunityOpenByCity(){
+        return opportunityService.reportOpportunityOpenByCity();
+    }
+
+
+    /*-----------------------------------REPORT BY INDUSTRY---------------------------------------- */
+
+    @GetMapping("/report/opportunity/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry(){
+        return opportunityService.reportOpportunityByIndustry();
+    }
+
+    @GetMapping("/report/opportunity/closed-won/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedWonByIndustry(){
+        return opportunityService.reportOpportunityClosedWonByIndustry();
+    }
+
+    @GetMapping("/report/opportunity/closed-lost/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedLostByIndustry(){
+        return opportunityService.reportOpportunityClosedLostByIndustry();
+    }
+
+    @GetMapping("/report/opportunity/open/by/industry")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OpportunitiesByIndustryDTO> reportOpportunityOpenByIndustry(){
+        return opportunityService.reportOpportunityOpenByIndustry();
+    }
+
+    /*-----------------------------------QUANTITY STATES---------------------------------------- */
 
     @GetMapping("/opportunity/max-quantity")
     @ResponseStatus(HttpStatus.OK)

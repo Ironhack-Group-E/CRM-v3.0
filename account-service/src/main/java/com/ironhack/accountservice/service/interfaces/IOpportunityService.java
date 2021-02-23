@@ -47,4 +47,21 @@ public interface IOpportunityService {
     List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry();
 
     List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry();
+
+    List<OpportunitiesByCityDTO> reportOpportunityByCity();
+
+    List<OpportunitiesByCityDTO> reportOpportunityClosedWonByCity();
+
+    List<OpportunitiesByCityDTO> reportOpportunityClosedLostByCity();
+
+    List<OpportunitiesByCityDTO> reportOpportunityOpenByCity();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityOpenByIndustry();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityClosedLostByIndustry();
+
+    List<OpportunitiesByIndustryDTO> reportOpportunityClosedWonByIndustry();
+
 }

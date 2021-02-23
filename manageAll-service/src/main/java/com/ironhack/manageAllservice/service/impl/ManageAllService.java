@@ -237,6 +237,7 @@ public class ManageAllService implements IManageAllService {
 
 
     /* ---------------------------------- REPORTS SERVICE -------------------------------------*/
+    /* ---------------------------------- BY SALES REP    -------------------------------------*/
 
     public List<ReportDTO> reportLeadBySalesRep() {
 
@@ -301,6 +302,9 @@ public class ManageAllService implements IManageAllService {
         return resultWithNames;
     }
 
+    /* ---------------------------------- BY PRODUCT -------------------------------------*/
+
+
     public List<OpportunityByProductDTO> reportOpportunityByProduct() {
 
         List<OpportunityByProductDTO> result = accountClient.reportOpportunityByProduct();
@@ -329,6 +333,103 @@ public class ManageAllService implements IManageAllService {
         return result;
     }
 
+    /* ---------------------------------- BY COUNTRY -------------------------------------*/
+
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityByCountry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCountryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityByCountry(),
+                throwable -> opportunityByCountryFallback());
+        return result;
+    }
+
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedWonByCountry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCountryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityClosedWonByCountry(),
+                throwable -> opportunityByCountryFallback());
+        return result;
+    }
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCountryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityClosedLostByCountry(),
+                throwable -> opportunityByCountryFallback());
+        return result;
+    }
+
+    public List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCountryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityOpenByCountry(),
+                throwable -> opportunityByCountryFallback());
+        return result;
+    }
+
+    /* ---------------------------------- BY CITY -------------------------------------*/
+
+    public List<OpportunitiesByCityDTO> reportOpportunityByCity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCityDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityByCity(),
+                throwable -> opportunityByCityFallback());
+        return result;
+    }
+
+
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedWonByCity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCityDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityClosedWonByCity(),
+                throwable -> opportunityByCityFallback());
+        return result;
+    }
+
+    public List<OpportunitiesByCityDTO> reportOpportunityClosedLostByCity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCityDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityClosedLostByCity(),
+                throwable -> opportunityByCityFallback());
+        return result;    }
+
+    public List<OpportunitiesByCityDTO> reportOpportunityOpenByCity() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByCityDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityOpenByCity(),
+                throwable -> opportunityByCityFallback());
+        return result;    }
+
+
+    /* ---------------------------------- BY INDUSTRY -------------------------------------*/
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByIndustryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityByIndustry(),
+                throwable -> opportunityByIndustryFallback());
+        return result;
+    }
+
+
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedWonByIndustry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByIndustryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityClosedWonByIndustry(),
+                throwable -> opportunityByIndustryFallback());
+        return result;
+    }
+
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityClosedLostByIndustry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByIndustryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityClosedLostByIndustry(),
+                throwable -> opportunityByIndustryFallback());
+        return result;
+    }
+
+    public List<OpportunitiesByIndustryDTO> reportOpportunityOpenByIndustry() {
+        CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
+        List<OpportunitiesByIndustryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityOpenByIndustry(),
+                throwable -> opportunityByIndustryFallback());
+        return result;
+    }
+
+
+    /* ---------------------------------- EMPLOYEE STATS -------------------------------------*/
 
     public Integer reportMaxEmployeeCount() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
@@ -358,6 +459,9 @@ public class ManageAllService implements IManageAllService {
         return medianEmployeeCount;
     }
 
+
+    /* --------------------------- OPPORTUNITY PER ACCOUNT STATS -------------------------------------*/
+
     public Integer reportMaxOpportunitiesPerAccount() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
         Integer maxOppos = circuitBreaker.run(() -> accountClient.getMaxOpportunitiesPerAccount(),
@@ -385,6 +489,9 @@ public class ManageAllService implements IManageAllService {
                 throwable -> getMedianOpportunitiesPerAccountFallback());
         return medianOppos;
     }
+
+    /* --------------------------- QUANTITY STATS -------------------------------------*/
+
 
     public Integer reportMaxQuantity() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
@@ -552,4 +659,15 @@ public class ManageAllService implements IManageAllService {
         throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
     }
 
+    private List<OpportunitiesByCityDTO> opportunityByCityFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private List<OpportunitiesByIndustryDTO> opportunityByIndustryFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
+
+    private List<OpportunitiesByCountryDTO> opportunityByCountryFallback() {
+        throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Account service not available");
+    }
 }
