@@ -337,4 +337,12 @@ public class ManageAllController implements IManageAllController {
         return manageAllService.reportMedianQuantity();
     }
 
+    /* ------------------------------ PDF GENERATOR --------------------------------------*/
+
+    @GetMapping("/generate/pdf/reports")
+    @ResponseStatus(HttpStatus.OK)
+    public void generatePdfReports() {
+        manageAllService.generatePdfReports();
+    }
+
 }

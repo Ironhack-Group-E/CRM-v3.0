@@ -102,4 +102,6 @@ public interface IManageAllService {
     List<OpportunitiesByCountryDTO> reportOpportunityClosedLostByCountry();
 
     List<OpportunitiesByCountryDTO> reportOpportunityOpenByCountry();
+
+    void generatePdfReports();
 }

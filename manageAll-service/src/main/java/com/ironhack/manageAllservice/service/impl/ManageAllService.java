@@ -9,6 +9,8 @@ import com.ironhack.manageAllservice.controller.dtos.report.ReportDTO;
 import com.ironhack.manageAllservice.service.exceptions.SalesRepNotFoundException;
 import com.ironhack.manageAllservice.controller.dtos.report.*;
 import com.ironhack.manageAllservice.service.interfaces.IManageAllService;
+import com.ironhack.manageAllservice.utils.PdfGenerator;
+import com.itextpdf.text.DocumentException;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.timelimiter.TimeLimiterConfig;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.io.FileNotFoundException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 @Service
 public class ManageAllService implements IManageAllService {
@@ -385,8 +389,8 @@ public class ManageAllService implements IManageAllService {
         return result;
     }
 
-    /* ---------------------------------- BY CITY -------------------------------------*/
 
+    /* ---------------------------------- BY CITY -------------------------------------*/
     public List<OpportunitiesByCityDTO> reportOpportunityByCity() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
         List<OpportunitiesByCityDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityByCity(),
@@ -415,8 +419,8 @@ public class ManageAllService implements IManageAllService {
         return result;    }
 
 
-    /* ---------------------------------- BY INDUSTRY -------------------------------------*/
 
+    /* ---------------------------------- BY INDUSTRY -------------------------------------*/
     public List<OpportunitiesByIndustryDTO> reportOpportunityByIndustry() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
         List<OpportunitiesByIndustryDTO> result = circuitBreaker.run(()->accountClient.reportOpportunityByIndustry(),
@@ -449,8 +453,8 @@ public class ManageAllService implements IManageAllService {
     }
 
 
-    /* ---------------------------------- EMPLOYEE STATS -------------------------------------*/
 
+    /* ---------------------------------- EMPLOYEE STATS -------------------------------------*/
     public Integer reportMaxEmployeeCount() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
         Integer maxEmployeeCount = circuitBreaker.run(() -> accountClient.getMaxEmployeeCount(),
@@ -480,8 +484,8 @@ public class ManageAllService implements IManageAllService {
     }
 
 
-    /* --------------------------- OPPORTUNITY PER ACCOUNT STATS -------------------------------------*/
 
+    /* --------------------------- OPPORTUNITY PER ACCOUNT STATS -------------------------------------*/
     public Integer reportMaxOpportunitiesPerAccount() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
         Integer maxOppos = circuitBreaker.run(() -> accountClient.getMaxOpportunitiesPerAccount(),
@@ -510,9 +514,9 @@ public class ManageAllService implements IManageAllService {
         return medianOppos;
     }
 
+
+
     /* --------------------------- QUANTITY STATS -------------------------------------*/
-
-
     public Integer reportMaxQuantity() {
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("account-service");
         Integer maxQuantity = circuitBreaker.run(() -> accountClient.getMaxQuantity(),
@@ -541,8 +545,64 @@ public class ManageAllService implements IManageAllService {
         return medianQuantity;
     }
 
-    /* --------------------------------- UTILITY METHODS ----------------------------*/
+    /* --------------------------------- PDF GENERATOR ----------------------------*/
 
+    public void generatePdfReports() {
+        HashMap<String, List<OpportunitiesByCityDTO>> hashMap1 = new HashMap<>();
+        HashMap<String, List<OpportunitiesByCountryDTO>> hashMap2 = new HashMap<>();
+        HashMap<String, List<OpportunitiesByIndustryDTO>> hashMap3 = new HashMap<>();
+        HashMap<String, List<OpportunityByProductDTO>> hashMap4 = new HashMap<>();
+        HashMap<String, List<ReportDTO>> hashMap5 = new HashMap<>();
+        HashMap<String, Double> stats = new HashMap<>();
+
+        hashMap5.put("Count of Opportunities By Sales Rep",  reportOpportunityBySalesRep());
+        hashMap5.put("Count of Opportunities by Sales Reps Where Closed Won", reportOpportunityClosedWonBySalesRep());
+        hashMap5.put("Count of Opportunities by Sales Reps Where Closed Lost", reportOpportunityClosedLostBySalesRep());
+        hashMap5.put("Count of Opportunities by Sales Reps Where Closed Open", reportOpportunityOpenBySalesRep());
+        hashMap5.put("Count of Leads by Sales Reps", reportLeadBySalesRep());
+        hashMap4.put("Count of Opportunities by Product", reportOpportunityByProduct());
+        hashMap4.put("Count of Opportunities by Product Where Closed Won", reportOpportunityClosedWonByProduct());
+        hashMap4.put("Count of Opportunities by Product Where Closed Lost", reportOpportunityClosedLostByProduct());
+        hashMap4.put("Count of Opportunities by Product Where Open", reportOpportunityOpenByProduct());
+        hashMap2.put("Count of Opportunities by Country", reportOpportunityByCountry());
+        hashMap2.put("Count of Opportunities by Country Where Closed Won", reportOpportunityClosedWonByCountry());
+        hashMap2.put("Count of Opportunities by Country Where Closed Lost", reportOpportunityClosedLostByCountry());
+        hashMap2.put("Count of Opportunities by Country Where Open", reportOpportunityOpenByCountry());
+        hashMap1.put("Count of Opportunities by City", reportOpportunityByCity());
+        hashMap1.put("Count of Opportunities by City Where Closed Won", reportOpportunityClosedWonByCity());
+        hashMap1.put("Count of Opportunities by City Where Closed Lost", reportOpportunityClosedLostByCity());
+        hashMap1.put("Count of Opportunities by City Where Open", reportOpportunityOpenByCity());
+        hashMap3.put("Count of Opportunities by Industry", reportOpportunityByIndustry());
+        hashMap3.put("Count of Opportunities by Industry Where Closed Won", reportOpportunityClosedWonByIndustry());
+        hashMap3.put("Count of Opportunities by Industry Where Closed Lost", reportOpportunityClosedLostByIndustry());
+        hashMap3.put("Count of Opportunities by Industry Where Open", reportOpportunityOpenByIndustry());
+
+
+        stats.put("Mean of Quantity", reportMeanQuantity());
+        stats.put("Max of Quantity", reportMaxQuantity().doubleValue());
+        stats.put("Min of Quantity", reportMinQuantity().doubleValue());
+        stats.put("Median of Quantity", reportMedianQuantity());
+        stats.put("Mean of Employee Count", reportMeanEmployeeCount());
+        stats.put("Max of Employee Count", reportMaxEmployeeCount().doubleValue());
+        stats.put("Min of Employee Count", reportMinEmployeeCount().doubleValue());
+        stats.put("Median of Employee Count", reportMedianEmployeeCount());
+        stats.put("Mean of Opportunities in Accounts", reportMeanOpportunitiesPerAccount());
+        stats.put("Max  of opportunities in Accounts", reportMaxOpportunitiesPerAccount().doubleValue());
+        stats.put("Min of Opportunities in Accounts", reportMinOpportunitiesPerAccount().doubleValue());
+        stats.put("Median of Opportunities in Accounts", reportMedianOpportunitiesPerAccount());
+
+
+        PdfGenerator.init(hashMap1, hashMap2, hashMap3, hashMap4, hashMap5, stats);
+        try {
+            PdfGenerator.generatePdf();
+        } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /* --------------------------------- UTILITY METHODS ----------------------------*/
 
     private List<ReportDTO> getReportDTOS(List<OpportunityBySalesRepDTO> result) {
         List<ReportDTO> resultWithNames = new ArrayList<>();
