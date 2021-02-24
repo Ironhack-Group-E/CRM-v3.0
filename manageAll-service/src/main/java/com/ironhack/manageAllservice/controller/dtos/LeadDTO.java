@@ -24,6 +24,17 @@ public class LeadDTO {
     @Min(1)
     private Integer salesRepId;
 
+    public LeadDTO() {
+    }
+
+    public LeadDTO(String name, String email, String companyName, String phoneNumber, Integer salesRepId) {
+        this.name = name;
+        this.email = email;
+        this.companyName = companyName;
+        this.phoneNumber = phoneNumber;
+        this.salesRepId = salesRepId;
+    }
+
     public Integer getId() {
         return id;
     }
