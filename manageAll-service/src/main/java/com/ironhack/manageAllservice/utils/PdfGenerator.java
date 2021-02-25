@@ -92,7 +92,35 @@ public class PdfGenerator {
 
         for (Map.Entry<String, List<OpportunitiesByCityDTO>> entries : queries1.entrySet()) {
             if (!entries.getValue().isEmpty()) {
-                //contents.add(generateQueryReport(entries.getKey(), entries.getValue()));
+                contents.add(generateQueryReport1(entries.getKey(), entries.getValue()));
+                addEmptyLine(contents, 1);
+
+            }
+        }
+        for (Map.Entry<String, List<OpportunitiesByCountryDTO>> entries : queries2.entrySet()) {
+            if (!entries.getValue().isEmpty()) {
+                contents.add(generateQueryReport2(entries.getKey(), entries.getValue()));
+                addEmptyLine(contents, 1);
+
+            }
+        }
+        for (Map.Entry<String, List<OpportunitiesByIndustryDTO>> entries : queries3.entrySet()) {
+            if (!entries.getValue().isEmpty()) {
+                contents.add(generateQueryReport3(entries.getKey(), entries.getValue()));
+                addEmptyLine(contents, 1);
+
+            }
+        }
+        for (Map.Entry<String, List<OpportunityByProductDTO>> entries : queries4.entrySet()) {
+            if (!entries.getValue().isEmpty()) {
+                contents.add(generateQueryReport4(entries.getKey(), entries.getValue()));
+                addEmptyLine(contents, 1);
+
+            }
+        }
+        for (Map.Entry<String, List<ReportDTO>> entries : queries5.entrySet()) {
+            if (!entries.getValue().isEmpty()) {
+                contents.add(generateQueryReport5(entries.getKey(), entries.getValue()));
                 addEmptyLine(contents, 1);
 
             }
@@ -120,16 +148,116 @@ public class PdfGenerator {
 
     }
 
-    private static Paragraph generateQueryReport(String title, List<Object[]> objects) throws DocumentException {
+    private static Paragraph generateQueryReport1(String title, List<OpportunitiesByCityDTO> objects) throws DocumentException {
 
 
         if (!objects.isEmpty()) {
 
             Paragraph paragraph = new Paragraph(title, subFont);
             com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 10);
-            for (Object[] object : objects) {
-                Chunk chunk = new Chunk(String.valueOf(object[0]) + ": ", smallBold);
-                Chunk chunk1 = new Chunk(String.valueOf(object[1]), small);
+            for (OpportunitiesByCityDTO object : objects) {
+                Chunk chunk = new Chunk(String.valueOf(object.getCity()) + ": ", smallBold);
+                Chunk chunk1 = new Chunk(String.valueOf(object.getCount()), small);
+                Paragraph paragraph1 = new Paragraph("");
+                paragraph1.add(chunk);
+                paragraph1.add(chunk1);
+                list.add(new ListItem(paragraph1));
+
+            }
+            paragraph.add(list);
+            return paragraph;
+
+        }
+
+
+        return new Paragraph("");
+    }
+
+    private static Paragraph generateQueryReport2(String title, List<OpportunitiesByCountryDTO> objects) throws DocumentException {
+
+
+        if (!objects.isEmpty()) {
+
+            Paragraph paragraph = new Paragraph(title, subFont);
+            com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 10);
+            for (OpportunitiesByCountryDTO object : objects) {
+                Chunk chunk = new Chunk(String.valueOf(object.getCountry()) + ": ", smallBold);
+                Chunk chunk1 = new Chunk(String.valueOf(object.getCount()), small);
+                Paragraph paragraph1 = new Paragraph("");
+                paragraph1.add(chunk);
+                paragraph1.add(chunk1);
+                list.add(new ListItem(paragraph1));
+
+            }
+            paragraph.add(list);
+            return paragraph;
+
+        }
+
+
+        return new Paragraph("");
+    }
+
+    private static Paragraph generateQueryReport3(String title, List<OpportunitiesByIndustryDTO> objects) throws DocumentException {
+
+
+        if (!objects.isEmpty()) {
+
+            Paragraph paragraph = new Paragraph(title, subFont);
+            com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 10);
+            for (OpportunitiesByIndustryDTO object : objects) {
+                Chunk chunk = new Chunk(String.valueOf(object.getIndustry()) + ": ", smallBold);
+                Chunk chunk1 = new Chunk(String.valueOf(object.getCount()), small);
+                Paragraph paragraph1 = new Paragraph("");
+                paragraph1.add(chunk);
+                paragraph1.add(chunk1);
+                list.add(new ListItem(paragraph1));
+
+            }
+            paragraph.add(list);
+            return paragraph;
+
+        }
+
+
+        return new Paragraph("");
+    }
+
+    private static Paragraph generateQueryReport4(String title, List<OpportunityByProductDTO> objects) throws DocumentException {
+
+
+        if (!objects.isEmpty()) {
+
+            Paragraph paragraph = new Paragraph(title, subFont);
+            com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 10);
+            for (OpportunityByProductDTO object : objects) {
+                Chunk chunk = new Chunk(String.valueOf(object.getProduct()) + ": ", smallBold);
+                Chunk chunk1 = new Chunk(String.valueOf(object.getCount()), small);
+                Paragraph paragraph1 = new Paragraph("");
+                paragraph1.add(chunk);
+                paragraph1.add(chunk1);
+                list.add(new ListItem(paragraph1));
+
+            }
+            paragraph.add(list);
+            return paragraph;
+
+        }
+
+
+        return new Paragraph("");
+    }
+
+    private static Paragraph generateQueryReport5(String title, List<ReportDTO> objects) throws DocumentException {
+
+
+        if (!objects.isEmpty()) {
+
+            Paragraph paragraph = new Paragraph(title, subFont);
+            com.itextpdf.text.List list = new com.itextpdf.text.List(false, false, 10);
+            for (ReportDTO object : objects) {
+                Chunk chunk = new Chunk(String.valueOf(object.getName()) + ": ", smallBold);
+                Chunk chunk1 = new Chunk(String.valueOf(object.getCount()), small);
                 Paragraph paragraph1 = new Paragraph("");
                 paragraph1.add(chunk);
                 paragraph1.add(chunk1);
