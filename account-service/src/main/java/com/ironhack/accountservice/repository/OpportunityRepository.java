@@ -19,19 +19,19 @@ public interface OpportunityRepository extends JpaRepository<Opportunity, Intege
     //Returns a list of names and count of all Opportunities by SalesRep where status is CLOSED_WON
     /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
             "WHERE o.status = CLOSED_WON GROUP BY s.name")*/
-    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = CLOSED_WON GROUP BY salesRepId")
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = 'CLOSED_WON' GROUP BY salesRepId")
     List<Object[]> countOfOpportunitiesBySalesRepsWhereClosedWon();
 
     //Returns a list of names and count of all Opportunities by SalesRep where status is CLOSED_LOST
     /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
             "WHERE o.status = CLOSED_LOST GROUP BY s.name")*/
-    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = CLOSED_LOST GROUP BY salesRepId")
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = 'CLOSED_LOST' GROUP BY salesRepId")
     List<Object[]> countOfOpportunitiesBySalesRepsWhereClosedLost();
 
     //Returns a list of names and count of all Opportunities by SalesRep where status is OPEN
     /*@Query(value = "SELECT s.name, COUNT(*) FROM SalesRep s JOIN FETCH Opportunity o ON s.id = o.salesRepId " +
             "WHERE o.status = OPEN GROUP BY s.name")*/
-    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = OPEN GROUP BY salesRepId")
+    @Query("SELECT salesRepId, COUNT(*) FROM Opportunity WHERE status = 'OPEN' GROUP BY salesRepId")
     List<Object[]> countOfOpportunitiesBySalesRepsWhereOpen();
 
     //Returns a list of products and count of all Opportunities by Product

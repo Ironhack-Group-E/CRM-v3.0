@@ -17,7 +17,7 @@ public interface LeadRepository extends JpaRepository<Lead, Integer> {
 
     /**
     *
-    *   ESTAS QUERIES NO HACEN FALTA INTEGRARLAS, SOLO LA PRIMERA
+    *   ESTAS QUERIES NO HACEN FALTA INTEGRARLAS (NO TENÍAN SENTIDO), SOLO LA PRIMERA
     *
      **/
 
