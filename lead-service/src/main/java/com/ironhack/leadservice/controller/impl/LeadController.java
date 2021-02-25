@@ -32,4 +32,10 @@ public class LeadController implements ILeadController {
     public LeadDTO add(@RequestBody LeadDTO leadDTO) {
         return service.add(leadDTO);
     }
+
+    @DeleteMapping("/lead/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public LeadDTO delete(@PathVariable Integer id) {
+        return service.delete(id);
+    }
 }

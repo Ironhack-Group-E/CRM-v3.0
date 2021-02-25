@@ -8,4 +8,5 @@ public interface ILeadController {
     List<LeadDTO> getAll();
     LeadDTO getById(Integer id);
     LeadDTO add(LeadDTO leadDTO);
+    LeadDTO delete(Integer id);
 }

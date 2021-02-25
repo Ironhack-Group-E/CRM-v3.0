@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,7 @@ public class SalesRepController implements ISalesRepController {
 
     @PostMapping("/sales-rep")
     @ResponseStatus(HttpStatus.CREATED)
-    public SalesRepDTO postSalesRep(@RequestBody SalesRepDTO salesRepDTO) {
+    public SalesRepDTO postSalesRep(@RequestBody @Valid SalesRepDTO salesRepDTO) {
         return salesRepService.postSalesRep(salesRepDTO);
     }
 }
