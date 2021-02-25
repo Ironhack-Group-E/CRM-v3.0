@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dc51eff2-058f-4df7-a4d1-0acf4121bd4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ironhack/accountservice/repository/OpportunityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ironhack/accountservice/repository/OpportunityRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1oi7oxFO4VEkut3gbvMfyJcGiIb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../configuration-service" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Capiro\Trabajos\Programación\Bootcamp Java\CRM-v3.0\account-service\src\main\java\com\ironhack\accountservice\enums" />
+      <recent name="G:\Capiro\Trabajos\Programación\Bootcamp Java\CRM-v3.0\account-service\src\main\java\com\ironhack\accountservice\repository" />
+      <recent name="G:\Capiro\Trabajos\Programación\Bootcamp Java\CRM-v3.0\account-service\src\main\java\com\ironhack\accountservice\model" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ironhack.accountservice.model" />
+      <recent name="com.ironhack.accountservice.repository" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ironhack.accountservice.enums" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.AccountServiceApplication">
+    <configuration name="AccountServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.accountservice.AccountServiceApplication" />
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.accountservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.accountservice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.accountservice.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.accountservice.repository.AccountRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.accountservice.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.accountservice.model" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.accountservice.model.AccountTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpportunityRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.accountservice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.accountservice.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.accountservice.repository.OpportunityRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpportunityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="account-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.accountservice.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.accountservice.model" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.accountservice.model.OpportunityTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AccountServiceApplication" />
+        <item itemvalue="JUnit.OpportunityTest" />
+        <item itemvalue="JUnit.OpportunityRepositoryTest" />
+        <item itemvalue="JUnit.AccountTest" />
+        <item itemvalue="JUnit.AccountRepositoryTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dc51eff2-058f-4df7-a4d1-0acf4121bd4d" name="Default Changelist" comment="" />
+      <created>1613757736834</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613757736834</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Put request changed to post">
+      <created>1613853798427</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613853798427</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Solved a typing error">
+      <created>1613854874175</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613854874175</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Solved a typing error">
+      <created>1613854904716</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613854904716</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added some tests">
+      <created>1614121151927</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614121151927</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Put request changed to post" />
+    <MESSAGE value="Solved a typing error" />
+    <MESSAGE value="Added some tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some tests" />
+  </component>
+</project>

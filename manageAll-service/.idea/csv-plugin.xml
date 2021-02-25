@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CsvFileAttributes">
+    <option name="attributeMap">
+      <map>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\client\AccountClient.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\client\LeadClient.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\client\SalesRepClient.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\configuration\Resilience4JConfiguration.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\controller\dtos\AccountDTO.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\controller\dtos\ContactDTO.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\controller\dtos\OpportunityDTO.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\controller\impl\ManageAllController.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\service\impl\ManageAllService.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\java\com\ironhack\manageAllservice\utils\PdfGenerator.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\test\java\com\ironhack\manageAllservice\controller\impl\ManageAllControllerTest.java">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

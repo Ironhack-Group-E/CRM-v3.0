@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a85b1008-cf4f-4172-b16f-6f6dd7b071d5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../account-service/src/main/java/com/ironhack/accountservice/repository/OpportunityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../account-service/src/main/java/com/ironhack/accountservice/repository/OpportunityRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="develop" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1ok3cOptEmiTrkIMaH1cqodhg0y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lead-service" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ironhack.manageAllservice.controller.dtos.report" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\Capiro\Trabajos\Programación\Bootcamp Java\CRM-v3.0\manageAll-service\src\main\java\com\ironhack\manageAllservice\enums" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.ironhack.manageAllservice.controller.impl" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ironhack.manageAllservice.utils" />
+      <recent name="com.ironhack.manageAllservice.service.exceptions" />
+      <recent name="com.ironhack.manageAllservice.controller.dtos" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.ManageAllServiceApplication">
+    <configuration name="ManageAllServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.manageAllservice.ManageAllServiceApplication" />
+      <module name="manageAll-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.manageAllservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManageAllControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manageAll-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.manageAllservice.controller.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.manageAllservice.controller.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.manageAllservice.controller.impl.ManageAllControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManageAllControllerTest.lookUpLead_ValidId_Lead" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manageAll-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.manageAllservice.controller.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.manageAllservice.controller.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.manageAllservice.controller.impl.ManageAllControllerTest" />
+      <option name="METHOD_NAME" value="lookUpLead_ValidId_Lead" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManageAllControllerTest.lookUpSalesRep_ValidId_SalesRep" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manageAll-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.manageAllservice.controller.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.manageAllservice.controller.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.manageAllservice.controller.impl.ManageAllControllerTest" />
+      <option name="METHOD_NAME" value="lookUpSalesRep_ValidId_SalesRep" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ManageAllControllerTest.newLead_ValidLeadDTO_LeadDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="manageAll-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ironhack.manageAllservice.controller.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ironhack.manageAllservice.controller.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.ironhack.manageAllservice.controller.impl.ManageAllControllerTest" />
+      <option name="METHOD_NAME" value="newLead_ValidLeadDTO_LeadDTO" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ManageAllServiceApplication" />
+        <item itemvalue="JUnit.ManageAllControllerTest.newLead_ValidLeadDTO_LeadDTO" />
+        <item itemvalue="JUnit.ManageAllControllerTest.lookUpSalesRep_ValidId_SalesRep" />
+        <item itemvalue="JUnit.ManageAllControllerTest.lookUpLead_ValidId_Lead" />
+        <item itemvalue="JUnit.ManageAllControllerTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a85b1008-cf4f-4172-b16f-6f6dd7b071d5" name="Default Changelist" comment="" />
+      <created>1613816842008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613816842008</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Created manageAll service">
+      <created>1613818610807</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1613818610807</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created manageAll service">
+      <created>1613818625806</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613818625806</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Created manageAll service">
+      <created>1613819641328</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613819641328</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Merge Claudia branch">
+      <created>1613819812270</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1613819812270</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Solved some problems with DTOs">
+      <created>1613826021796</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1613826021796</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added new salesRep and new lead">
+      <created>1613828749619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1613828749619</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Modified new salesRep and new lead">
+      <created>1613830268551</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1613830268551</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Configuration repo changed">
+      <created>1613830364184</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1613830364184</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added close opportunity request">
+      <created>1613852088655</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1613852088655</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge Ivan branch">
+      <created>1613852748545</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1613852748545</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Put request changed to post">
+      <created>1613854659971</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1613854659971</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Report opportunity (total, closed-won, closed-lost, open) by sales reps added">
+      <created>1613939652184</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1613939652184</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Tried circuit breaker configuration">
+      <created>1614112092004</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1614112092004</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added regular expression to validations">
+      <created>1614122267625</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1614122267625</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Second try to circuitbreaker configuration">
+      <created>1614163990758</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1614163990758</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Some tests done">
+      <created>1614205768441</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614205768441</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added a request for pdf generator">
+      <created>1614208706390</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1614208706390</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Pdf generator modified">
+      <created>1614284312062</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1614284312062</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created manageAll service" />
+    <MESSAGE value="Merge Claudia branch" />
+    <MESSAGE value="Solved some problems with DTOs" />
+    <MESSAGE value="Added new salesRep and new lead" />
+    <MESSAGE value="Modified new salesRep and new lead" />
+    <MESSAGE value="Configuration repo changed" />
+    <MESSAGE value="Added close opportunity request" />
+    <MESSAGE value="Merge Ivan branch" />
+    <MESSAGE value="Put request changed to post" />
+    <MESSAGE value="Report opportunity (total, closed-won, closed-lost, open) by sales reps added" />
+    <MESSAGE value="Tried circuit breaker configuration" />
+    <MESSAGE value="Added regular expression to validations" />
+    <MESSAGE value="Second try to circuitbreaker configuration" />
+    <MESSAGE value="Some tests done" />
+    <MESSAGE value="Added a request for pdf generator" />
+    <MESSAGE value="Pdf generator modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pdf generator modified" />
+  </component>
+</project>
