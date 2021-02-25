@@ -42,6 +42,10 @@ The functionalities are shown below, followed by a detailed description of each 
 - **MAX <EmployeeCount/Quantity/Opps per Account>**: Get the Max of your employee count, quantity, and opportunities.
 - **MIN <EmployeeCount/Quantity/Opps per Account>**: Get the Min of your employee count, quantity, and opportunities.
 
+## Extra Functionalities 
+
+- PDF GENERATOR: A request that generates a pdf with all the reports and stats.
+
 ## Diagrams
 
 - Case Diagram:
@@ -213,6 +217,16 @@ No Body required.
 Use this route to get the stats of opportunities per account:
 ``` 
 GET ROUTE:  http://localhost:8083/report/{min/max/mean/median}/opportunities/per/account
+
+No Auth needed.
+No Body required.
+```
+
+### PDF GENERATOR
+
+Use this route to get a pdf with all the reports and stats (the file is created in /src/main/resources/reports/):
+``` 
+GET ROUTE:  http://localhost:8083/generate/pdf/reports
 
 No Auth needed.
 No Body required.
