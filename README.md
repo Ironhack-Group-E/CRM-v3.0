@@ -1,6 +1,8 @@
 # CRM-v3.0
 
-The former version of CRM was a terminal-based software... (ACABAR ESTA PARTE)
+The latest version of CRM moves away from the command console to an API interface, where you will be able to manage your sales representatives, potential leads, opportunities, contacts and accounts.
+
+It also allows you to generate pdf reports with all the necessary statistics to manage efficiently your business.
 
 ## Instalation
 
@@ -40,6 +42,19 @@ The functionalities are shown below, followed by a detailed description of each 
 - **MAX <EmployeeCount/Quantity/Opps per Account>**: Get the Max of your employee count, quantity, and opportunities.
 - **MIN <EmployeeCount/Quantity/Opps per Account>**: Get the Min of your employee count, quantity, and opportunities.
 
+## Diagrams
+
+- Case Diagram:
+
+![alt text](https://github.com/Ironhack-Group-E/CRM-v3.0/blob/main/The-Exceptionalists-CRM-v2.0/src/main/resources/diagrams/TheDataLayer-UseCase-Diagram.png)
+
+- Class Diagram:
+
+![alt text](https://github.com/Ironhack-Group-E/CRM-v3.0/blob/main/The-Exceptionalists-CRM-v2.0/src/main/resources/diagrams/CRM_Exceptionalists.jpeg)
+
+- Microservices Diagram
+
+![alt text](https://github.com/Ironhack-Group-E/CRM-v3.0/blob/main/The-Exceptionalists-CRM-v2.0/src/main/resources/diagrams/microservices-diagram.jpg)
 
 ## ROUTES
 
